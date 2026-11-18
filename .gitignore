@@ -1,0 +1,16 @@
+# Raw heavy data packs (avoid GitHub file size limits)
+data_pack/
+analysis/
+
+# Python environment and caches
+__pycache__/
+*.py[cod]
+*$py.class
+fontlist-v390.json
+extracted_text.txt
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

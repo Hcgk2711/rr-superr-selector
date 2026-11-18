@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajasthan Royals | IPL 2027 Auction Strategy Board</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rrpink: '#ff1493',
+            rrpinkpale: '#ffe4ef',
+            rrnavy: '#0a192f',
+            rrblue: '#1e40af',
+            rrgold: '#f59e0b',
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', '"Space Grotesk"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'hard-sm': '4px 4px 0px 0px #000000',
+            'hard-md': '8px 8px 0px 0px #000000',
+            'hard-lg': '12px 12px 0px 0px #000000',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { border-color: #000000; }
+    body { background-color: #fdf2f8; font-family: 'Inter', sans-serif; }
+    .nb-box {
+      border: 2px solid #000000;
+      background-color: #ffffff;
+      box-shadow: 6px 6px 0px 0px #000000;
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .nb-box:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 10px 10px 0px 0px #000000;
+    }
+    .nb-btn {
+      background-color: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 5px 5px 0px 0px #000000;
+      font-weight: 800;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .nb-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 3px 3px 0px 0px #000000;
+    }
+  </style>
+  <script>
+    function returnToDashboard() {
+      if (document.referrer && document.referrer.indexOf("index.html") !== -1) {
+        window.location.href = document.referrer;
+      } else if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</head>
+<body class="p-4 md:p-8">
+
+  <!-- Top Navigation Bar with Back Button that returns to exact previous spot -->
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white border-2 border-black p-4 shadow-hard-md">
+    <div class="flex items-center gap-3">
+      <a href="index.html" onclick="returnToDashboard(); return false;" class="block">
+        <img src="rr_logo.png" alt="Rajasthan Royals Logo" class="w-12 h-12 object-contain border-2 border-black shadow-hard-sm bg-rrpink hover:scale-105 transition-transform">
+      </a>
+      <div>
+        <h1 class="font-heading font-black text-2xl text-black">OPTION POSITIONS & AUCTION STRATEGY</h1>
+        <p class="text-xs font-mono text-gray-600">EXECUTIVE ACTION BLUEPRINT &bull; WAR ROOM REPORT &bull; IPL 2027</p>
+      </div>
+    </div>
+    
+    <!-- JavaScript history.back() returns to exact spot on previous page -->
+    <a href="index.html" onclick="returnToDashboard(); return false;" class="nb-btn px-6 py-3 text-sm uppercase tracking-wider flex items-center gap-2">
+      <span>&larr; BACK TO MAIN WEBSITE</span>
+    </a>
+  </div>
+
+  <!-- Navigation Pill Bar -->
+  <div class="max-w-7xl mx-auto mb-8 flex flex-wrap items-center gap-3">
+    <a href="picks.html" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-white text-black hover:bg-rrpink hover:text-white transition-colors">
+      FINAL PICKS ROSTER &rarr;
+    </a>
+    <a href="strategy.html" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-white text-black hover:bg-rrgold hover:text-black transition-colors">
+      TYPE 1, TYPE 2 & TYPE 3 STRATEGY &rarr;
+    </a>
+    <a href="RR_Pressure_Performance_Report.pdf" download="RR_Pressure_Performance_Report.pdf" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-black text-white hover:bg-gray-800 transition-colors ml-auto">
+      📄 DOWNLOAD 19-PAGE REPORT PDF
+    </a>
+  </div>
+
+  <div class="max-w-7xl mx-auto space-y-12">
+    
+    <!-- SECTION 1: 4 TIER STRATEGY IN RECTANGULAR BOXES -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-4 h-8 bg-rrpink border border-black inline-block"></span>
+        <h2 class="font-heading font-black text-2xl md:text-3xl text-black">AUCTION PURSE ALLOCATION TIERS</h2>
+        <span class="text-xs font-mono font-bold bg-black text-white px-2 py-0.5 border border-black">BUDGET BLUEPRINT</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Tier 1 Box -->
+        <div class="nb-box p-6 border-t-4 border-t-rrblue flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-rrblue text-white font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+                TIER 1 &bull; 30&ndash;35% PURSE
+              </span>
+              <span class="text-xs font-bold font-mono text-rrblue">NON-NEGOTIABLE</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-black">FRONTLINE DEATH SEAMER</h3>
+            <p class="text-xs text-gray-700 mt-2 font-mono">
+              <b>Primary Target:</b> Arshdeep Singh (Left-arm Fast)<br/>
+              <b>Alternates:</b> Matheesha Pathirana, Jasprit Bumrah
+            </p>
+            <div class="bg-blue-50 border border-black p-3 font-mono text-xs my-3">
+              <b>2026 Leakage Audit:</b> RR's non-Archer seamers conceded <b>11.20 rpo</b> at the death. Arshdeep has <b>93 death wickets</b> in 1,021 balls with a 0.490 CV across 60 matches.
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              <b>Asymmetrical Release Angle:</b> Pairing Arshdeep with Jofra Archer forces right-handers chasing 10+ RRR to adjust between high-arm 145 clicks and natural incoming left-arm angle.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-rrblue">
+            DIRECTIVE: ALL-IN MARQUEE BID
+          </div>
+        </div>
+
+        <!-- Tier 2 Box -->
+        <div class="nb-box p-6 border-t-4 border-t-rrpink flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-rrpink text-white font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+                TIER 2 &bull; 18&ndash;22% PURSE
+              </span>
+              <span class="text-xs font-bold font-mono text-rrpink">PRIMARY VALUE PLAY</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-black">INDIAN CLUTCH FINISHER</h3>
+            <p class="text-xs text-gray-700 mt-2 font-mono">
+              <b>Primary Target:</b> Shashank Singh (RHB)<br/>
+              <b>Alternates:</b> Rinku Singh, Tristan Stubbs
+            </p>
+            <div class="bg-pink-50 border border-black p-3 font-mono text-xs my-3">
+              <b>Lower-Order Fix:</b> Shashank operates with a <b>194.2 Pressure SR</b> and <b>44.8 Average</b> in 10+ RRR chases. Eliminates Hetmyer-dependency.
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              <b>The Season 1 Benchmark:</b> Just as Season 1 uncovered Vignesh Puthur early, Shashank is the high-value domestic signing that preserves budget for top-order anchors.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-rrpink">
+            DIRECTIVE: HIGH-VALUE DOMESTIC ASSET
+          </div>
+        </div>
+
+        <!-- Tier 3 Box -->
+        <div class="nb-box p-6 border-t-4 border-t-rrgold flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-rrgold text-black font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+                TIER 3 &bull; 12&ndash;15% PURSE
+              </span>
+              <span class="text-xs font-bold font-mono text-black">TACTICAL MATCH-UP</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-black">SPIN SPECIALIST & POWER</h3>
+            <p class="text-xs text-gray-700 mt-2 font-mono">
+              <b>Primary Targets:</b> Akeal Hosein & Heinrich Klaasen<br/>
+              <b>Marquee Option:</b> Rashid Khan (if released)
+            </p>
+            <div class="bg-amber-50 border border-black p-3 font-mono text-xs my-3">
+              <b>Jaipur Dimensions Fit:</b> SMS Stadium has 68&ndash;72m square boundaries. Akeal's <b>6.18 PP economy</b> forces batters to hit to the longest parts of the ground.
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Klaasen provides pure straight-bat swing (184.2 Pressure SR) that clears deep straight boundaries on turning tracks when early wickets fall.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-black">
+            DIRECTIVE: PITCH MATCH-UP RESERVE
+          </div>
+        </div>
+
+        <!-- Tier 4 Box -->
+        <div class="nb-box p-6 border-t-4 border-t-black flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-black text-white font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+                TIER 4 &bull; 5&ndash;10% PURSE
+              </span>
+              <span class="text-xs font-bold font-mono text-gray-600">SQUAD DEPTH</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-black">HIGH-UPSIDE VALUE DEPTH</h3>
+            <p class="text-xs text-gray-700 mt-2 font-mono">
+              <b>Primary Targets:</b> T Natarajan & Pramod Madushan<br/>
+              <b>Pinch Role:</b> Vaibhav Suryavanshi
+            </p>
+            <div class="bg-slate-100 border border-black p-3 font-mono text-xs my-3">
+              <b>Rotation Cover:</b> Natarajan delivers pinpoint overs 19&ndash;20 yorkers (8.20 death eco). Madushan drops economy from 7.99 to 6.58 under pressure.
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Mitigates the Haris Rauf BCCI eligibility constraint by acquiring verified Indian yorker depth to navigate the grueling 14-match season.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-gray-800">
+            DIRECTIVE: ROTATION RESILIENCE
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2: 2026 ROSTER GAP DIAGNOSIS -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-4 h-8 bg-rrnavy border border-black inline-block"></span>
+        <h2 class="font-heading font-black text-2xl md:text-3xl text-black">RR 2026 SQUAD GAPS & WAR-ROOM SOLUTIONS</h2>
+        <span class="text-xs font-mono font-bold bg-rrnavy text-white px-2 py-0.5 border border-black">STATISTICAL AUDIT</span>
+      </div>
+
+      <div class="nb-box p-6 bg-white overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="bg-rrnavy text-white font-heading font-bold uppercase tracking-wider border-b-2 border-black">
+              <th class="p-3">Identified Tactical Gap</th>
+              <th class="p-3">Statistical Reality (2026 Squad)</th>
+              <th class="p-3 text-center">Severity</th>
+              <th class="p-3">War-Room Solution & Recommended Auction Target</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y-2 divide-black font-medium">
+            <tr>
+              <td class="p-3 font-bold text-black font-mono">Death Bowling Beyond Archer</td>
+              <td class="p-3 text-gray-700">Archer is injury-prone; Deshpande (11.15 eco), Sandeep (11.00 eco), Sen (12.73 eco) leaked runs catastrophically.</td>
+              <td class="p-3 text-center font-bold text-red-600 bg-red-50 border-x-2 border-black">CRITICAL</td>
+              <td class="p-3 text-gray-800 font-bold">Acquire Arshdeep Singh (#3) or Pathirana (#2). Fixes death overs permanently.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-black font-mono">Lower-Middle Order Chase Finishing</td>
+              <td class="p-3 text-gray-700">Hetmyer death SR dropped below 170; Curran (154.3 SR) and Dubey lack boundary conversion in 10+ RRR.</td>
+              <td class="p-3 text-center font-bold text-red-600 bg-red-50 border-x-2 border-black">CRITICAL</td>
+              <td class="p-3 text-gray-800 font-bold">Sign Shashank Singh (#1) as primary Indian finisher at No. 6/7.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-black font-mono">Middle-Overs Spin Destroyer</td>
+              <td class="p-3 text-gray-700">When top order falls on turning wickets, RR lacks an elite boundary-clearer against wrist-spin.</td>
+              <td class="p-3 text-center font-bold text-amber-700 bg-amber-50 border-x-2 border-black">HIGH</td>
+              <td class="p-3 text-gray-800 font-bold">Target Heinrich Klaasen (#3) or Pooran (#9). Clears deep straight boundaries.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-black font-mono">Defensive Powerplay Spin</td>
+              <td class="p-3 text-gray-700">Ravi Bishnoi is an attacking middle-overs weapon but lacks early Powerplay boundary restriction.</td>
+              <td class="p-3 text-center font-bold text-blue-700 bg-blue-50 border-x-2 border-black">MEDIUM</td>
+              <td class="p-3 text-gray-800 font-bold">Sign Akeal Hosein (#5) &mdash; 6.18 PP eco, 52.4% dot balls for Jaipur SMS Stadium.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Back to Main Website Action -->
+    <div class="text-center pt-8 border-t-2 border-black flex flex-wrap items-center justify-center gap-4">
+      <a href="index.html" onclick="returnToDashboard(); return false;" class="nb-btn px-8 py-4 text-base uppercase tracking-wider inline-flex items-center gap-2">
+        <span>&larr; RETURN TO DASHBOARD (WHERE YOU LEFT OFF)</span>
+      </a>
+      <a href="picks.html" class="nb-box px-6 py-4 font-mono text-xs font-bold bg-white text-black hover:bg-rrpink hover:text-white transition-colors">
+        OPEN FINAL PICKS ROSTER &rarr;
+      </a>
+      <a href="strategy.html" class="nb-box px-6 py-4 font-mono text-xs font-bold bg-white text-black hover:bg-rrgold hover:text-black transition-colors">
+        OPEN TYPE 1, 2, 3 STRATEGY &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

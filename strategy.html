@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajasthan Royals | Type 1, Type 2 & Type 3 Strategy Models</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rrpink: '#ff1493',
+            rrpinkpale: '#ffe4ef',
+            rrnavy: '#0a192f',
+            rrnavydark: '#040d1a',
+            rrblue: '#1e40af',
+            rrgold: '#f59e0b',
+            rrsage: '#b7c6c2',
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', '"Space Grotesk"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'hard-sm': '4px 4px 0px 0px #000000',
+            'hard-md': '8px 8px 0px 0px #000000',
+            'hard-lg': '12px 12px 0px 0px #000000',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { border-color: #000000; }
+    body { background-color: #fdf2f8; font-family: 'Inter', sans-serif; }
+    .nb-box {
+      border: 2px solid #000000;
+      background-color: #ffffff;
+      box-shadow: 6px 6px 0px 0px #000000;
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .nb-box:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 10px 10px 0px 0px #000000;
+    }
+    .nb-btn {
+      background-color: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 5px 5px 0px 0px #000000;
+      font-weight: 800;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .nb-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 3px 3px 0px 0px #000000;
+    }
+    .nb-tab-active {
+      background-color: #ff1493;
+      color: #ffffff;
+      box-shadow: 4px 4px 0px 0px #000000;
+    }
+  </style>
+
+  <script>
+    function returnToDashboard() {
+      if (document.referrer && document.referrer.indexOf("index.html") !== -1) {
+        window.location.href = document.referrer;
+      } else if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</head>
+<body class="p-4 md:p-8">
+
+  <!-- Top Navigation Bar: Returns seamlessly to exact scroll position -->
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white border-2 border-black p-4 shadow-hard-md">
+    <div class="flex items-center gap-3">
+      <a href="index.html" onclick="returnToDashboard(); return false;" class="block">
+        <img src="rr_logo.png" alt="Rajasthan Royals Logo" class="w-12 h-12 object-contain border-2 border-black shadow-hard-sm bg-rrpink hover:scale-105 transition-transform">
+      </a>
+      <div>
+        <h1 class="font-heading font-black text-2xl text-black">TYPE 1, TYPE 2 & TYPE 3 STRATEGY MODELS</h1>
+        <p class="text-xs font-mono text-gray-600">AUDITED MATHEMATICAL METHODOLOGY &bull; WAR ROOM SPECIFICATION</p>
+      </div>
+    </div>
+    
+    <!-- Instant Return to Main Website -->
+    <a href="index.html" onclick="returnToDashboard(); return false;" class="nb-btn px-6 py-3 text-sm uppercase tracking-wider flex items-center gap-2">
+      <span>&larr; BACK TO MAIN WEBSITE</span>
+    </a>
+  </div>
+
+  <!-- Navigation Pill Bar to Jump Across Sections -->
+  <div class="max-w-7xl mx-auto mb-8 flex flex-wrap items-center gap-3">
+    <a href="#type1" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-white text-black hover:bg-rrpink hover:text-white transition-colors">
+      TYPE 1: RCD DIFFERENTIAL (AUDITED #1)
+    </a>
+    <a href="#type2" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-white text-black hover:bg-rrgold hover:text-black transition-colors">
+      TYPE 2: DLS-LEVERAGE (CPI)
+    </a>
+    <a href="#type3" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-white text-black hover:bg-blue-600 hover:text-white transition-colors">
+      TYPE 3: ROLE SCENARIOS (TREI)
+    </a>
+    <a href="#triangulation" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-white text-black hover:bg-emerald-600 hover:text-white transition-colors">
+      CROSS-APPROACH CONSENSUS
+    </a>
+    <a href="auction.html" class="nb-box px-4 py-2 font-mono text-xs font-bold bg-black text-white hover:bg-gray-800 transition-colors ml-auto">
+      AUCTION POSITIONS BOARD &rarr;
+    </a>
+  </div>
+
+  <div class="max-w-7xl mx-auto space-y-16">
+    
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: TYPE 1 OPTION (APPROACH 1 - AUDITED RCD DIFFERENTIAL)          -->
+    <!-- ========================================================================= -->
+    <section id="type1" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-4 h-8 bg-rrpink border border-black inline-block"></span>
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider bg-rrpink text-white px-2 py-0.5 border border-black">
+            TYPE 1 OPTION &bull; AUDITED FIRST PRIORITY
+          </span>
+          <h2 class="font-heading font-black text-2xl md:text-3xl text-black mt-1">
+            APPROACH 1: BASELINE VS. PRESSURE DIFFERENTIAL (RCD)
+          </h2>
+        </div>
+      </div>
+
+      <!-- Detail Card on Strategy & Rationale from PDF -->
+      <div class="nb-box p-6 bg-white space-y-4">
+        <h3 class="font-heading font-black text-xl text-black">Why Approach 1 Leads the Strategy</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Approach 1 operationalises the core scouting question: <b>does this player raise their game when the situation demands it?</b> 
+          A player who strikes at 150 normally but drops to 125 under pressure is exposed; a player who rises from 145 to 195 is a clutch asset. 
+          To protect Rajasthan Royals against misleading small samples, this model has been <b>strictly audited to remove tailenders, micro-sample outliers, and associate-league skews</b>.
+        </p>
+
+        <!-- Pressure Triggers Definition Box -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 bg-pink-50 border border-black font-mono text-xs">
+            <b class="text-rrpink text-sm uppercase block mb-1">Batter Pressure Triggers (10,761 Balls):</b>
+            <ul class="list-disc pl-4 space-y-1 text-gray-800">
+              <li><b>P1:</b> Chasing with Required Run Rate &ge; 9.00 rpo.</li>
+              <li><b>P2:</b> Death overs (16&ndash;20) of a live chase with &le; 36 runs needed.</li>
+              <li><b>P3:</b> Wickets in hand &le; 4 with &le; 30 balls remaining.</li>
+              <li><b>P4:</b> Death overs of an IPL/T20I knockout match.</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-blue-50 border border-black font-mono text-xs">
+            <b class="text-rrblue text-sm uppercase block mb-1">Bowler Pressure Triggers (19,612 Balls):</b>
+            <ul class="list-disc pl-4 space-y-1 text-gray-800">
+              <li><b>Q1:</b> Defending when opposition's RRR &ge; 9.00 rpo.</li>
+              <li><b>Q2:</b> Death overs (16&ndash;20) of a defending innings.</li>
+              <li><b>Q3:</b> Defending with &le; 12 balls left and &le; 12 runs needed.</li>
+              <li><b>Q4:</b> Death overs of a playoff / knockout clash.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Formula Specification -->
+        <div class="p-4 bg-slate-900 text-white border border-black font-mono text-xs space-y-2">
+          <div class="text-rrpink font-bold uppercase">Audited Clutch Index Formulas (Z-Score Standardised):</div>
+          <div><b>Batters:</b> Clutch<sub>bat</sub> = 0.40 &times; z(pSR) + 0.25 &times; z(pAvg) + 0.15 &times; z(Death SR) + 0.10 &times; z(Boundary%) + 0.10 &times; z(Volume)</div>
+          <div><b>Bowlers:</b> Clutch<sub>bowl</sub> = 0.30 &times; z(Pressure Wkts) + 0.25 &times; z(Death Dot%) + 0.20 &times; z(Pressure Econ) + 0.15 &times; z(Econ Improve) + 0.10 &times; z(Volume)</div>
+        </div>
+      </div>
+
+      <!-- Type 1 Batters Grid -->
+      <h3 class="font-heading font-black text-lg text-black pt-2">Type 1 Audited Batters (Top 5 Primary Targets)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        
+        <div class="nb-box p-4 border-t-4 border-t-rrpink flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-rrpink text-white px-2 py-0.5 border border-black">#1 PRIORITY</span>
+            <h4 class="font-heading font-black text-lg mt-2">SHASHANK SINGH</h4>
+            <div class="text-[11px] font-mono text-rrpink font-bold">Indian Clutch Finisher</div>
+            <p class="text-xs text-gray-600 mt-2">194.2 pSR, 44.8 pAvg. #1 Indian chase finisher under 10+ RRR. Solves RR's lower-middle order.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 94.8</span>
+            <span>CV: 0.457</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-black flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5 border border-black">#2 TARGET</span>
+            <h4 class="font-heading font-black text-lg mt-2">NAJIBULLAH ZADRAN</h4>
+            <div class="text-[11px] font-mono text-gray-800 font-bold">Middle-Order LHB</div>
+            <p class="text-xs text-gray-600 mt-2">223.8 pSR, 62.7 pAvg. 1.50&times; clutch win ratio; averages 91.3 in winning causes.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 93.4</span>
+            <span>CV: 0.480</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-rrgold flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-rrgold text-black px-2 py-0.5 border border-black">#3 TARGET</span>
+            <h4 class="font-heading font-black text-lg mt-2">HEINRICH KLAASEN</h4>
+            <div class="text-[11px] font-mono text-amber-800 font-bold">Spin Destroyer / Keeper</div>
+            <p class="text-xs text-gray-600 mt-2">184.2 pSR, 39.1 pAvg. Highest boundary % vs spin in T20; neutralizes turning tracks.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 91.8</span>
+            <span>CV: 0.520</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-black flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-gray-200 text-black px-2 py-0.5 border border-black">#4 TARGET</span>
+            <h4 class="font-heading font-black text-lg mt-2">TRISTAN STUBBS</h4>
+            <div class="text-[11px] font-mono text-gray-700 font-bold">360&deg; Death Finisher</div>
+            <p class="text-xs text-gray-600 mt-2">212.5 pSR, 214.0 Death SR across 1,080 balls. High boundary clearing.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 89.6</span>
+            <span>CV: 0.523</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-rrpink flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-rrpink text-white px-2 py-0.5 border border-black">#5 TARGET</span>
+            <h4 class="font-heading font-black text-lg mt-2">RINKU SINGH</h4>
+            <div class="text-[11px] font-mono text-rrpink font-bold">Ice-Cold LHB Closer</div>
+            <p class="text-xs text-gray-600 mt-2">168.0 pSR, 46.2 pAvg. Lowest dot-ball rate (&lt;18%) in overs 18&ndash;20; proven match winner.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 88.7</span>
+            <span>CV: 0.481</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Type 1 Bowlers Grid -->
+      <h3 class="font-heading font-black text-lg text-black pt-2">Type 1 Audited Bowlers (Top 5 Primary Targets)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        
+        <div class="nb-box p-4 border-t-4 border-t-rrblue flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-rrblue text-white px-2 py-0.5 border border-black">#1 BENCHMARK</span>
+            <h4 class="font-heading font-black text-lg mt-2">JASPRIT BUMRAH</h4>
+            <div class="text-[11px] font-mono text-rrblue font-bold">Benchmark Death Seam</div>
+            <p class="text-xs text-gray-600 mt-2">7.10 death eco, 43 pressure wkts, 37.4% dots. Unquestioned gold standard.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 95.6</span>
+            <span>CV: 0.550</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-rrblue flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-rrblue text-white px-2 py-0.5 border border-black">#2 SLING SEAM</span>
+            <h4 class="font-heading font-black text-lg mt-2">M. PATHIRANA</h4>
+            <div class="text-[11px] font-mono text-blue-800 font-bold">Death Yorker Specialist</div>
+            <p class="text-xs text-gray-600 mt-2">8.01 death eco, 52 pressure wkts, 145+ km/h sling angle. Extreme bat-break profile.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 93.9</span>
+            <span>CV: 0.509</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-black flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5 border border-black">#3 MARQUEE BUY</span>
+            <h4 class="font-heading font-black text-lg mt-2">ARSHDEEP SINGH</h4>
+            <div class="text-[11px] font-mono text-emerald-700 font-bold">Indian Left-Arm Seam</div>
+            <p class="text-xs text-gray-600 mt-2">93 death wkts in 1,021 balls. Proven over 60 matches. Lowest CV (0.490) among frontline pacers.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 92.4</span>
+            <span>CV: 0.490</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-rrgold flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-rrgold text-black px-2 py-0.5 border border-black">#4 ELITE WRIST</span>
+            <h4 class="font-heading font-black text-lg mt-2">RASHID KHAN</h4>
+            <div class="text-[11px] font-mono text-amber-800 font-bold">Attacking Match-Winner</div>
+            <p class="text-xs text-gray-600 mt-2">39 matches, 48 wkts under pressure. Attacks both edges when defending.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 90.2</span>
+            <span>CV: 0.836</span>
+          </div>
+        </div>
+
+        <div class="nb-box p-4 border-t-4 border-t-emerald-600 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold bg-emerald-600 text-white px-2 py-0.5 border border-black">#5 JAIPUR FIT</span>
+            <h4 class="font-heading font-black text-lg mt-2">AKEAL HOSEIN</h4>
+            <div class="text-[11px] font-mono text-emerald-800 font-bold">Powerplay Restrictor</div>
+            <p class="text-xs text-gray-600 mt-2">6.18 PP eco, 52.4% dot balls. Exploits Sawai Mansingh Stadium's 70m square boundaries.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-gray-200 font-mono text-[11px] font-bold flex justify-between">
+            <span>RCD: 88.5</span>
+            <span>CV: 0.497</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: TYPE 2 OPTION (APPROACH 2 - COMPOSITE PRESSURE INDEX - CPI)    -->
+    <!-- ========================================================================= -->
+    <section id="type2" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-4 h-8 bg-rrgold border border-black inline-block"></span>
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider bg-rrgold text-black px-2 py-0.5 border border-black">
+            TYPE 2 OPTION &bull; CONTINUOUS DLS-LEVERAGE MODEL
+          </span>
+          <h2 class="font-heading font-black text-2xl md:text-3xl text-black mt-1">
+            APPROACH 2: COMPOSITE PRESSURE INDEX (CPI)
+          </h2>
+        </div>
+      </div>
+
+      <!-- Detail Card on Strategy & Rationale from PDF -->
+      <div class="nb-box p-6 bg-white space-y-4">
+        <h3 class="font-heading font-black text-xl text-black">Continuous In-Game Leverage</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Instead of binary trigger flags, Approach 2 assigns a <b>continuous pressure score from 0.00 to 1.00</b> to every single ball based on match deficit, resources remaining, and phase. 
+          Performance is evaluated exclusively on the <b>top-quartile high-pressure deliveries (CPI &ge; 0.066)</b> across all 200,999 balls in the database.
+        </p>
+
+        <!-- 6 Component Weight Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left border border-black">
+            <thead class="bg-rrnavy text-white font-mono uppercase">
+              <tr>
+                <th class="p-2 border border-black">Component</th>
+                <th class="p-2 border border-black">Tactical Signal Measured</th>
+                <th class="p-2 border border-black text-center">Weight</th>
+                <th class="p-2 border border-black">Dynamic Range</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-black font-mono">
+              <tr><td class="p-2 font-bold">c_rrr</td><td class="p-2">Required run rate intensity in chases</td><td class="p-2 text-center font-bold text-rrpink">0.30</td><td class="p-2">0 (no chase) &rarr; 1 (RRR &ge; 15.0)</td></tr>
+              <tr><td class="p-2 font-bold">c_wick</td><td class="p-2">Wicket pressure: (10 &minus; wickets in hand) &divide; 10</td><td class="p-2 text-center font-bold">0.20</td><td class="p-2">0.0 &rarr; 1.0</td></tr>
+              <tr><td class="p-2 font-bold">c_def</td><td class="p-2">Deficit intensity: |RRR &minus; Current RR| &divide; 6</td><td class="p-2 text-center font-bold">0.15</td><td class="p-2">0.0 &rarr; 1.0</td></tr>
+              <tr><td class="p-2 font-bold">c_time</td><td class="p-2">Time decay: 1 &minus; (balls remaining &divide; 120)</td><td class="p-2 text-center font-bold">0.15</td><td class="p-2">0.0 &rarr; 1.0</td></tr>
+              <tr><td class="p-2 font-bold">c_phase</td><td class="p-2">Phase weighting (PP=0.2, Mid=0.5, Death=1.0)</td><td class="p-2 text-center font-bold">0.15</td><td class="p-2">0.2 &rarr; 1.0</td></tr>
+              <tr><td class="p-2 font-bold">c_ko</td><td class="p-2">Knockout stage multiplier (1.0 vs 0.6)</td><td class="p-2 text-center font-bold">0.05</td><td class="p-2">0.6 &rarr; 1.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Type 2 Batters & Bowlers Side by Side -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Type 2 Batters -->
+        <div class="nb-box p-5 bg-white">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b-2 border-black">
+            <h4 class="font-heading font-black text-lg text-black">Top Batters on Continuous CPI</h4>
+            <span class="bg-rrgold text-black font-mono text-xs font-bold px-2 py-0.5 border border-black">CPI &ge; 0.066</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead class="bg-gray-100 font-mono text-gray-700">
+                <tr><th class="p-1.5">Player</th><th class="p-1.5 text-center">Balls</th><th class="p-1.5 text-center">CPI SR</th><th class="p-1.5 text-center">Uplift</th><th class="p-1.5 text-right">Score</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 font-mono">
+                <tr><td class="p-1.5 font-bold">Sameer Rizvi</td><td class="p-1.5 text-center">136</td><td class="p-1.5 text-center text-rrpink font-bold">185.3</td><td class="p-1.5 text-center">1.33&times;</td><td class="p-1.5 text-right font-bold">100.0</td></tr>
+                <tr><td class="p-1.5 font-bold">Donovan Ferreira</td><td class="p-1.5 text-center">147</td><td class="p-1.5 text-center text-rrpink font-bold">201.4</td><td class="p-1.5 text-center">1.27&times;</td><td class="p-1.5 text-right font-bold">99.4</td></tr>
+                <tr><td class="p-1.5 font-bold">Naman Dhir</td><td class="p-1.5 text-center">185</td><td class="p-1.5 text-center font-bold">201.1</td><td class="p-1.5 text-center">1.22&times;</td><td class="p-1.5 text-right font-bold">98.8</td></tr>
+                <tr><td class="p-1.5 font-bold">Shreyas Iyer</td><td class="p-1.5 text-center">392</td><td class="p-1.5 text-center font-bold">186.5</td><td class="p-1.5 text-center">1.27&times;</td><td class="p-1.5 text-right font-bold">98.2</td></tr>
+                <tr class="bg-amber-50"><td class="p-1.5 font-bold">Suryakumar Yadav</td><td class="p-1.5 text-center">558</td><td class="p-1.5 text-center font-bold">183.0</td><td class="p-1.5 text-center">1.14&times;</td><td class="p-1.5 text-right font-bold">97.6</td></tr>
+                <tr><td class="p-1.5 font-bold">Jacob Bethell</td><td class="p-1.5 text-center">98</td><td class="p-1.5 text-center font-bold">176.5</td><td class="p-1.5 text-center">1.23&times;</td><td class="p-1.5 text-right font-bold">97.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[11px] text-gray-500 mt-3 italic">Surfaces hyper-aggressive late accelerators whose scoring increases as match leverage spikes.</p>
+        </div>
+
+        <!-- Type 2 Bowlers -->
+        <div class="nb-box p-5 bg-white">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b-2 border-black">
+            <h4 class="font-heading font-black text-lg text-black">Top Bowlers on Continuous CPI</h4>
+            <span class="bg-rrblue text-white font-mono text-xs font-bold px-2 py-0.5 border border-black">CPI &ge; 0.066</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead class="bg-gray-100 font-mono text-gray-700">
+                <tr><th class="p-1.5">Player</th><th class="p-1.5 text-center">Balls</th><th class="p-1.5 text-center">CPI Econ</th><th class="p-1.5 text-center">Improve</th><th class="p-1.5 text-right">Score</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 font-mono">
+                <tr class="bg-emerald-50"><td class="p-1.5 font-bold">Akeal Hosein</td><td class="p-1.5 text-center">236</td><td class="p-1.5 text-center text-emerald-700 font-bold">5.85</td><td class="p-1.5 text-center text-emerald-700 font-bold">+1.54</td><td class="p-1.5 text-right font-bold">100.0</td></tr>
+                <tr><td class="p-1.5 font-bold">Arshdeep Singh</td><td class="p-1.5 text-center">1100</td><td class="p-1.5 text-center font-bold">8.24</td><td class="p-1.5 text-center">-0.13</td><td class="p-1.5 text-right font-bold">99.4</td></tr>
+                <tr><td class="p-1.5 font-bold">Matheesha Pathirana</td><td class="p-1.5 text-center">641</td><td class="p-1.5 text-center text-blue-700 font-bold">6.49</td><td class="p-1.5 text-center text-blue-700 font-bold">+0.45</td><td class="p-1.5 text-right font-bold">98.9</td></tr>
+                <tr><td class="p-1.5 font-bold">Rashid Khan</td><td class="p-1.5 text-center">731</td><td class="p-1.5 text-center font-bold">7.85</td><td class="p-1.5 text-center">-0.60</td><td class="p-1.5 text-right font-bold">98.3</td></tr>
+                <tr><td class="p-1.5 font-bold">Abrar Ahmed</td><td class="p-1.5 text-center">220</td><td class="p-1.5 text-center font-bold">5.43</td><td class="p-1.5 text-center">+1.04</td><td class="p-1.5 text-right font-bold">97.7</td></tr>
+                <tr><td class="p-1.5 font-bold">Jasprit Bumrah</td><td class="p-1.5 text-center">602</td><td class="p-1.5 text-center font-bold">6.95</td><td class="p-1.5 text-center">-0.30</td><td class="p-1.5 text-right font-bold">95.4</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[11px] text-gray-500 mt-3 italic">Akeal Hosein leads with +1.54 economy drop under high CPI; Arshdeep and Pathirana confirm top status.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: TYPE 3 OPTION (APPROACH 3 - TACTICAL ROLE EXECUTION - TREI)    -->
+    <!-- ========================================================================= -->
+    <section id="type3" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-4 h-8 bg-blue-600 border border-black inline-block"></span>
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider bg-blue-600 text-white px-2 py-0.5 border border-black">
+            TYPE 3 OPTION &bull; SITUATION-SPECIFIC ROLE FIT
+          </span>
+          <h2 class="font-heading font-black text-2xl md:text-3xl text-black mt-1">
+            APPROACH 3: SITUATION-SPECIFIC ROLE SCENARIOS (TREI)
+          </h2>
+        </div>
+      </div>
+
+      <!-- Detail Card on Strategy & Rationale from PDF -->
+      <div class="nb-box p-6 bg-white space-y-4">
+        <h3 class="font-heading font-black text-xl text-black">Concrete Tactical Roles</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Approach 3 recognizes that a death-overs finisher's job (chase closing in overs 16&ndash;20) is fundamentally different from a top-order anchor rebuilding after early wickets. 
+          It isolates <b>5 distinct tactical scenarios</b> that decide IPL championships, scoring each player on their specific assigned role.
+        </p>
+
+        <!-- 5 Scenarios Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 pt-2">
+          <div class="p-3 bg-gray-50 border border-black font-mono text-xs">
+            <span class="font-bold text-rrpink block">S1: DEATH BATTING</span>
+            <p class="text-[11px] text-gray-600 mt-1">Overs 16&ndash;20, any innings. Late acceleration.</p>
+            <div class="mt-2 text-[10px] font-bold bg-white p-1 border">Weight: 35% Bat</div>
+          </div>
+          <div class="p-3 bg-gray-50 border border-black font-mono text-xs">
+            <span class="font-bold text-rrpink block">S2: CHASE FINISH</span>
+            <p class="text-[11px] text-gray-600 mt-1">2nd innings, overs 16&ndash;20, &le; 30 runs needed.</p>
+            <div class="mt-2 text-[10px] font-bold bg-white p-1 border">Weight: 45% Bat</div>
+          </div>
+          <div class="p-3 bg-gray-50 border border-black font-mono text-xs">
+            <span class="font-bold text-rrgold block">S3: PP REBUILD</span>
+            <p class="text-[11px] text-gray-600 mt-1">Powerplay with &ge; 1 wkt down by over 4.</p>
+            <div class="mt-2 text-[10px] font-bold bg-white p-1 border">Weight: 20% Bat</div>
+          </div>
+          <div class="p-3 bg-gray-50 border border-black font-mono text-xs">
+            <span class="font-bold text-rrblue block">S4: DEATH BOWLING</span>
+            <p class="text-[11px] text-gray-600 mt-1">Overs 16&ndash;20 of 2nd innings defence.</p>
+            <div class="mt-2 text-[10px] font-bold bg-white p-1 border">Weight: 65% Bowl</div>
+          </div>
+          <div class="p-3 bg-gray-50 border border-black font-mono text-xs">
+            <span class="font-bold text-emerald-700 block">S5: LOW-TOTAL DEF</span>
+            <p class="text-[11px] text-gray-600 mt-1">Defending target &le; 150 runs.</p>
+            <div class="mt-2 text-[10px] font-bold bg-white p-1 border">Weight: 35% Bowl</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type 3 Batters & Bowlers Summary -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <div class="nb-box p-5 bg-white">
+          <h4 class="font-heading font-black text-lg text-black mb-3 pb-2 border-b-2 border-black">Multi-Scenario Batters (Role Score)</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left font-mono">
+              <thead class="bg-gray-100 text-gray-700">
+                <tr><th class="p-1.5">Player</th><th class="p-1.5">Scenarios Tested</th><th class="p-1.5 text-center">Role Score</th><th class="p-1.5 text-right">Read</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-1.5 font-bold">Harry Brook</td><td class="p-1.5">S1, S2, S3</td><td class="p-1.5 text-center font-bold">1.62</td><td class="p-1.5 text-right text-gray-600">3-Scenario Proven</td></tr>
+                <tr><td class="p-1.5 font-bold">Glenn Maxwell</td><td class="p-1.5">S1, S2, S3</td><td class="p-1.5 text-center font-bold">1.59</td><td class="p-1.5 text-right text-gray-600">Dual Acceleration</td></tr>
+                <tr class="bg-pink-50"><td class="p-1.5 font-bold">Shashank Singh</td><td class="p-1.5 font-bold text-rrpink">S1, S2</td><td class="p-1.5 text-center font-bold text-rrpink">1.58</td><td class="p-1.5 text-right font-bold text-rrpink">Elite Chase Closer</td></tr>
+                <tr><td class="p-1.5 font-bold">Aiden Markram</td><td class="p-1.5">S1, S2, S3</td><td class="p-1.5 text-center font-bold">1.23</td><td class="p-1.5 text-right text-gray-600">Rebuild + Finish</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="nb-box p-5 bg-white">
+          <h4 class="font-heading font-black text-lg text-black mb-3 pb-2 border-b-2 border-black">Multi-Scenario Bowlers (Role Score)</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left font-mono">
+              <thead class="bg-gray-100 text-gray-700">
+                <tr><th class="p-1.5">Player</th><th class="p-1.5">Scenarios Tested</th><th class="p-1.5 text-center">Role Score</th><th class="p-1.5 text-right">Read</th></tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="bg-amber-50"><td class="p-1.5 font-bold">Rashid Khan</td><td class="p-1.5 font-bold">S4, S5</td><td class="p-1.5 text-center font-bold text-amber-800">2.12</td><td class="p-1.5 text-right font-bold text-amber-800">#1 Multi-Scenario</td></tr>
+                <tr class="bg-blue-50"><td class="p-1.5 font-bold">Arshdeep Singh</td><td class="p-1.5 font-bold">S4, S5</td><td class="p-1.5 text-center font-bold text-rrblue">0.93</td><td class="p-1.5 text-right font-bold text-rrblue">Death + Low Defense</td></tr>
+                <tr><td class="p-1.5 font-bold">Yuzvendra Chahal</td><td class="p-1.5">S4, S5</td><td class="p-1.5 text-center font-bold">1.12</td><td class="p-1.5 text-right text-gray-600">Middle + Death Mix</td></tr>
+                <tr><td class="p-1.5 font-bold">Akeal Hosein</td><td class="p-1.5">S4, S5</td><td class="p-1.5 text-center font-bold">1.21</td><td class="p-1.5 text-right text-gray-600">PP Low Defense</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: TRIANGULATION CONSENSUS MATRIX                                 -->
+    <!-- ========================================================================= -->
+    <section id="triangulation" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-4 h-8 bg-black border border-black inline-block"></span>
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider bg-black text-white px-2 py-0.5 border border-black">
+            SYNTHESIS & VALIDATION
+          </span>
+          <h2 class="font-heading font-black text-2xl md:text-3xl text-black mt-1">
+            CROSS-APPROACH CONSENSUS AUDIT
+          </h2>
+        </div>
+      </div>
+
+      <div class="nb-box p-6 bg-white overflow-x-auto">
+        <p class="text-xs text-gray-700 mb-4 font-mono">
+          A pick is confirmed highest-trust when they appear across multiple lenses. 
+          <b>Approach 1 leads</b> as the anomaly-cleaned benchmark; Approach 2 and 3 provide mathematical validation.
+        </p>
+
+        <table class="w-full text-left text-xs border border-black">
+          <thead class="bg-rrnavy text-white font-mono uppercase">
+            <tr>
+              <th class="p-3 border border-black">Target Player</th>
+              <th class="p-3 border border-black text-center">Role</th>
+              <th class="p-3 border border-black text-center">Type 1 (RCD #1 Priority)</th>
+              <th class="p-3 border border-black text-center">Type 2 (CPI Continuous)</th>
+              <th class="p-3 border border-black text-center">Type 3 (TREI Scenarios)</th>
+              <th class="p-3 border border-black">Scout's Final War-Room Verdict</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-black font-medium">
+            <tr class="bg-pink-50">
+              <td class="p-3 font-bold font-mono">Shashank Singh</td>
+              <td class="p-3 text-center font-mono">Batter</td>
+              <td class="p-3 text-center font-bold text-rrpink font-mono">Rank #1</td>
+              <td class="p-3 text-center font-mono">Rank #13</td>
+              <td class="p-3 text-center font-mono">Rank #9</td>
+              <td class="p-3 text-gray-900 font-bold">Unanimous consensus. Solves RR's #1 Indian finishing void.</td>
+            </tr>
+            <tr class="bg-blue-50">
+              <td class="p-3 font-bold font-mono">Arshdeep Singh</td>
+              <td class="p-3 text-center font-mono">Bowler</td>
+              <td class="p-3 text-center font-bold text-rrblue font-mono">Rank #3</td>
+              <td class="p-3 text-center font-bold text-rrblue font-mono">Rank #2</td>
+              <td class="p-3 text-center font-bold text-rrblue font-mono">Rank #4</td>
+              <td class="p-3 text-gray-900 font-bold">Anchors top 4 across ALL 3 MODELS. Non-negotiable marquee bid.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold font-mono">Matheesha Pathirana</td>
+              <td class="p-3 text-center font-mono">Bowler</td>
+              <td class="p-3 text-center font-mono font-bold">Rank #2</td>
+              <td class="p-3 text-center font-mono font-bold">Rank #3</td>
+              <td class="p-3 text-center font-mono">&mdash;</td>
+              <td class="p-3 text-gray-900">Highest-ranked death containment seamer (8.01 death eco).</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold font-mono">Rashid Khan</td>
+              <td class="p-3 text-center font-mono">Bowler</td>
+              <td class="p-3 text-center font-mono">Rank #4</td>
+              <td class="p-3 text-center font-mono">Rank #4</td>
+              <td class="p-3 text-center font-mono font-bold text-amber-700">Rank #1</td>
+              <td class="p-3 text-gray-900">Tops scenario role execution; attacks both edges under pressure.</td>
+            </tr>
+            <tr class="bg-emerald-50">
+              <td class="p-3 font-bold font-mono">Akeal Hosein</td>
+              <td class="p-3 text-center font-mono">Bowler</td>
+              <td class="p-3 text-center font-mono">Rank #5</td>
+              <td class="p-3 text-center font-bold text-emerald-700 font-mono">Rank #1</td>
+              <td class="p-3 text-center font-mono">Rank #7</td>
+              <td class="p-3 text-gray-900 font-bold">6.18 PP economy. Tailor-made for Jaipur SMS Stadium pitch.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Bottom Return Action Bar -->
+    <div class="text-center pt-8 border-t-2 border-black flex flex-wrap items-center justify-center gap-4">
+      <a href="index.html" onclick="returnToDashboard(); return false;" class="nb-btn px-8 py-4 text-base uppercase tracking-wider inline-flex items-center gap-2">
+        <span>&larr; RETURN TO DASHBOARD (WHERE YOU LEFT OFF)</span>
+      </a>
+      <a href="picks.html" class="nb-box px-6 py-4 font-mono text-xs font-bold bg-white text-black hover:bg-rrpink hover:text-white transition-colors">
+        OPEN FINAL PICKS ROSTER &rarr;
+      </a>
+      <a href="auction.html" class="nb-box px-6 py-4 font-mono text-xs font-bold bg-white text-black hover:bg-rrblue hover:text-white transition-colors">
+        OPEN AUCTION POSITIONS BOARD &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

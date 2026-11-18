@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajasthan Royals | SupeRR Selector S2 — Pressure-Proof Dashboard</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rrpink: '#ff1493',
+            rrpinkdark: '#e0007b',
+            rrpinkpale: '#ffe4ef',
+            rrnavy: '#0a192f',
+            rrnavydark: '#040d1a',
+            rrblue: '#1e40af',
+            rrgold: '#f59e0b',
+            rrsage: '#b7c6c2',
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', '"Space Grotesk"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'hard-sm': '4px 4px 0px 0px #000000',
+            'hard-md': '8px 8px 0px 0px #000000',
+            'hard-lg': '12px 12px 0px 0px #000000',
+            'hard-xl': '16px 16px 0px 0px #000000',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      border-color: #000000;
+    }
+    
+    body {
+      background-color: #fdf2f8;
+      color: #000000;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* 32px radial dot pattern on RR Pink */
+    .bg-dot-pattern {
+      background-image: radial-gradient(#000000 12%, transparent 12%);
+      background-position: 0 0;
+      background-size: 32px 32px;
+    }
+
+    /* Neo-Brutalist Buttons with Active Press Animation */
+    .nb-btn-primary {
+      background-color: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 6px 6px 0px 0px #000000;
+      font-weight: 800;
+      transition: all 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .nb-btn-primary:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0px 0px #000000;
+    }
+    .nb-btn-primary:active {
+      transform: translate(6px, 6px);
+      box-shadow: 0px 0px 0px 0px #000000;
+    }
+
+    .nb-btn-pink {
+      background-color: #ff1493;
+      color: #ffffff;
+      border: 2px solid #000000;
+      box-shadow: 6px 6px 0px 0px #000000;
+      font-weight: 800;
+      transition: all 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .nb-btn-pink:hover {
+      background-color: #e0007b;
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0px 0px #000000;
+    }
+
+    .nb-btn-white {
+      background-color: #ffffff;
+      color: #000000;
+      border: 2px solid #000000;
+      box-shadow: 6px 6px 0px 0px #000000;
+      font-weight: 800;
+      transition: all 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .nb-btn-white:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0px 0px #000000;
+    }
+
+    /* Asymmetric Cards */
+    .asymmetric-card {
+      border: 2px solid #000000;
+      background-color: #ffffff;
+      border-top-right-radius: 1.875rem;
+      border-bottom-left-radius: 1.875rem;
+      border-top-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      box-shadow: 6px 6px 0px 0px #000000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .asymmetric-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 10px 10px 0px 0px #000000;
+    }
+
+    /* Interactive Formula & Architecture Cards Animation */
+    .formula-card {
+      border: 2px solid #000000;
+      background-color: #ffffff;
+      box-shadow: 6px 6px 0px 0px #000000;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .formula-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 12px 12px 0px 0px #000000;
+    }
+    .formula-card:active {
+      transform: translateY(2px);
+      box-shadow: 4px 4px 0px 0px #000000;
+    }
+
+    /* Pulse Glow indicators */
+    .glow-pink { box-shadow: 0 0 0 4px #ff1493; }
+    .glow-gold { box-shadow: 0 0 0 4px #f59e0b; }
+    .glow-blue { box-shadow: 0 0 0 4px #2563eb; }
+
+    /* Stroke Heading Effect */
+    .stroke-text {
+      color: transparent;
+      -webkit-text-stroke: 2px #000000;
+    }
+
+    /* Smooth infinite marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 24s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    /* Floating Animation */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-float {
+      animation: floatSlow 3.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-rrpink selection:text-white" id="home">
+
+  <!-- ========================================================================= -->
+  <!-- 1. FIXED UTILITY HEADER WITH OFFICIAL RR LOGO                              -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 h-20 bg-rrpink border-b-2 border-black z-50 px-4 md:px-8 flex items-center justify-between">
+    <!-- Left: Official RR Logo with Alignment -->
+    <a href="#home" class="flex items-center gap-3 group">
+      <div class="h-12 w-12 bg-white border-2 border-black shadow-hard-sm p-1 flex items-center justify-center group-hover:scale-105 group-hover:rotate-3 transition-transform">
+        <img src="rr_logo.png" alt="Rajasthan Royals Official Logo" class="h-full w-full object-contain">
+      </div>
+      <div>
+        <span class="font-heading font-black text-xl md:text-2xl tracking-tighter text-white drop-shadow-[2px_2px_0px_#000]">
+          ROYALS<span class="text-rrgold">SCOUT</span>
+        </span>
+        <span class="hidden md:inline-block ml-2 text-[10px] font-bold uppercase tracking-widest bg-black text-white px-2 py-0.5 border border-black font-mono">
+          SEASON 2 &bull; ROUND 1
+        </span>
+      </div>
+    </a>
+
+    <!-- Center: Navigation Links (Opens in SAME tab so Back works seamlessly) -->
+    <nav class="hidden lg:flex items-center gap-5 font-heading font-extrabold text-sm tracking-wider text-black">
+      <a href="picks.html" class="hover:underline decoration-2 underline-offset-4 decoration-black hover:text-white transition-all flex items-center gap-1 bg-white/40 px-2.5 py-1 border border-black shadow-hard-sm">
+        <span>FINAL PICKS</span>
+        <span class="text-[10px]">&rarr;</span>
+      </a>
+      <a href="auction.html" class="hover:underline decoration-2 underline-offset-4 decoration-black hover:text-white transition-all flex items-center gap-1 bg-white/40 px-2.5 py-1 border border-black shadow-hard-sm">
+        <span>OPTION POSITIONS</span>
+        <span class="text-[10px]">&rarr;</span>
+      </a>
+      <a href="strategy.html" class="hover:underline decoration-2 underline-offset-4 decoration-black hover:text-white transition-all flex items-center gap-1 bg-white/40 px-2.5 py-1 border border-black shadow-hard-sm">
+        <span>TYPE 1, 2, 3 STRATEGY</span>
+        <span class="text-[10px]">&rarr;</span>
+      </a>
+      <a href="#models" class="hover:underline decoration-2 underline-offset-4 decoration-black hover:text-white transition-all">THE 3 MODELS</a>
+      <a href="#consistency" class="hover:underline decoration-2 underline-offset-4 decoration-black hover:text-white transition-all">CV AUDIT</a>
+      <a href="#methodology" class="hover:underline decoration-2 underline-offset-4 decoration-black hover:text-white transition-all">METHODOLOGY</a>
+    </nav>
+
+    <!-- Right: Primary CTA (Download Exact PDF) -->
+    <div class="flex items-center gap-3">
+      <a href="RR_Pressure_Performance_Report.pdf" download="RR_Pressure_Performance_Report.pdf" class="nb-btn-primary px-4 py-2.5 text-xs md:text-sm uppercase tracking-wider flex items-center gap-2">
+        <span>📄 DOWNLOAD PDF</span>
+        <span class="bg-rrpink text-white text-[10px] px-1.5 py-0.5 border border-black font-mono">REPORT</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Spacer for fixed header -->
+  <div class="h-20"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. HERO SECTION (#ff1493 Pink + Radial Dot Pattern + Split Grid)          -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-rrpink bg-dot-pattern border-b-2 border-black py-16 md:py-20 px-4 md:px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: High-Impact Typography -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 bg-white border-2 border-black px-4 py-1.5 rounded-full shadow-hard-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-rrpink animate-ping"></span>
+          <span class="font-heading font-extrabold text-xs tracking-wider uppercase text-black">
+            NEW: IPL 2027 AUCTION STRATEGY REPORT
+          </span>
+        </div>
+
+        <h1 class="font-heading font-black text-4xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight text-white drop-shadow-[4px_4px_0px_#000]">
+          IDENTIFY <br/>
+          <span class="stroke-text bg-white px-2 text-black inline-block border-2 border-black shadow-hard-md my-1 hover:translate-x-1 hover:-translate-y-1 transition-transform">
+            PRESSURE-PROOF
+          </span><br/>
+          MATCH WINNERS
+        </h1>
+
+        <p class="font-body text-base md:text-lg font-medium text-black bg-white/95 p-4 border-2 border-black shadow-hard-sm max-w-xl">
+          An institutional data intelligence system built on <b>867 matches</b> and <b>200,999 deliveries</b> (IPL & T20I 2022&ndash;2026). 
+          Directly solving Rajasthan Royals' 2026 death-overs bowling leakage and middle-order chase fragility.
+        </p>
+
+        <!-- Action Buttons (Opens in same tab so browser back works) -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="picks.html" class="nb-btn-primary px-6 py-3.5 text-sm md:text-base tracking-wider uppercase flex items-center gap-2">
+            <span>FINAL PICKS ROSTER &rarr;</span>
+          </a>
+          <a href="auction.html" class="nb-btn-white px-6 py-3.5 text-sm md:text-base tracking-wider uppercase flex items-center gap-2">
+            <span>OPTION POSITIONS &rarr;</span>
+          </a>
+          <a href="strategy.html" class="nb-btn-primary bg-rrnavy text-white px-6 py-3.5 text-sm md:text-base tracking-wider uppercase flex items-center gap-2 border-2 border-black">
+            <span>TYPE 1, 2 & 3 STRATEGY &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Stat Pill Bar -->
+        <div class="grid grid-cols-3 gap-3 pt-4 max-w-lg">
+          <div class="bg-white border-2 border-black p-2.5 shadow-hard-sm text-center hover:translate-x-0.5 hover:translate-y-0.5 transition-transform">
+            <div class="font-heading font-black text-2xl text-rrnavy">200.9K</div>
+            <div class="text-[11px] font-bold text-gray-700 uppercase">Deliveries</div>
+          </div>
+          <div class="bg-white border-2 border-black p-2.5 shadow-hard-sm text-center hover:translate-x-0.5 hover:translate-y-0.5 transition-transform">
+            <div class="font-heading font-black text-2xl text-rrpink">10+10</div>
+            <div class="text-[11px] font-bold text-gray-700 uppercase">Audited Targets</div>
+          </div>
+          <div class="bg-white border-2 border-black p-2.5 shadow-hard-sm text-center hover:translate-x-0.5 hover:translate-y-0.5 transition-transform">
+            <div class="font-heading font-black text-2xl text-rrgold">#1 RCD</div>
+            <div class="text-[11px] font-bold text-gray-700 uppercase">Lead Metric</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Clean Browser Mockup -->
+      <div class="lg:col-span-5 animate-float">
+        <div class="bg-white border-2 border-black shadow-hard-xl rounded-none overflow-hidden">
+          <!-- Window Header (3 dots) -->
+          <div class="bg-rrnavy border-b-2 border-black px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#ff5f57] border border-black inline-block"></span>
+              <span class="w-3.5 h-3.5 rounded-full bg-[#febc2e] border border-black inline-block"></span>
+              <span class="w-3.5 h-3.5 rounded-full bg-[#28c840] border border-black inline-block"></span>
+            </div>
+            <span class="font-mono text-xs font-bold text-rrsage tracking-wider">supeRR-selector://war-room</span>
+            <span class="text-[10px] bg-rrgold text-black font-mono font-bold px-2 py-0.5 border border-black">VERIFIED</span>
+          </div>
+
+          <!-- Internal Data Panels (Navigates to picks.html in same tab) -->
+          <div class="p-6 bg-slate-50 space-y-4">
+            
+            <!-- Quick Target 1: Batter Lead -->
+            <div class="bg-white border-2 border-black p-4 shadow-hard-sm hover:translate-x-1 hover:translate-y-1 transition-transform cursor-pointer" onclick="window.location.href='picks.html'">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold uppercase tracking-wider bg-rrpink text-white px-2 py-0.5 border border-black font-mono">
+                  #1 BATTER &bull; INDIAN FINISHER
+                </span>
+                <span class="font-heading font-black text-sm text-rrnavy">RCD: 94.8</span>
+              </div>
+              <h3 class="font-heading font-black text-xl text-black">SHASHANK SINGH</h3>
+              <p class="text-xs text-gray-600 mt-1">#1 Indian chase finisher under 10+ RRR; 194.2 SR, 44.8 avg in high-stakes pressure.</p>
+              <div class="mt-3 flex items-center justify-between text-xs font-mono font-bold pt-2 border-t border-gray-200">
+                <span>Pressure SR: <b class="text-rrpink">194.2</b></span>
+                <span>Death SR: <b class="text-black">214.0</b></span>
+                <span>CV: <b class="text-emerald-700">0.457</b></span>
+              </div>
+            </div>
+
+            <!-- Quick Target 2: Bowler Lead -->
+            <div class="bg-white border-2 border-black p-4 shadow-hard-sm hover:translate-x-1 hover:translate-y-1 transition-transform cursor-pointer" onclick="window.location.href='picks.html'">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold uppercase tracking-wider bg-rrblue text-white px-2 py-0.5 border border-black font-mono">
+                  #1 BOWLER &bull; BENCHMARK SEAM
+                </span>
+                <span class="font-heading font-black text-sm text-rrnavy">RCD: 95.6</span>
+              </div>
+              <h3 class="font-heading font-black text-xl text-black">JASPRIT BUMRAH</h3>
+              <p class="text-xs text-gray-600 mt-1">532 balls, 7.10 death economy, 43 pressure wickets, 37.4% death dot balls.</p>
+              <div class="mt-3 flex items-center justify-between text-xs font-mono font-bold pt-2 border-t border-gray-200">
+                <span>Death Eco: <b class="text-emerald-700">7.10</b></span>
+                <span>Pressure Wkts: <b class="text-black">43</b></span>
+                <span>Dots: <b class="text-rrblue">37.4%</b></span>
+              </div>
+            </div>
+
+            <!-- Quick Target 3: Indian Volume Spearhead -->
+            <div class="bg-white border-2 border-black p-4 shadow-hard-sm hover:translate-x-1 hover:translate-y-1 transition-transform cursor-pointer" onclick="window.location.href='picks.html'">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold uppercase tracking-wider bg-black text-white px-2 py-0.5 border border-black font-mono">
+                  #3 BOWLER &bull; ARSHDEEP SINGH
+                </span>
+                <span class="font-mono text-xs font-bold text-emerald-600">CV: 0.490</span>
+              </div>
+              <p class="text-xs text-gray-700"><b>93 death wickets</b> across 1,021 balls. Lowest variance among all frontline pacers.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. SOCIAL PROOF MARQUEE (#0a192f Navy Background)                         -->
+  <!-- ========================================================================= -->
+  <div class="w-full bg-rrnavy border-b-2 border-black py-4 overflow-hidden select-none">
+    <div class="animate-marquee font-heading font-black text-lg md:text-xl text-rrsage/90 uppercase tracking-widest whitespace-nowrap">
+      <span>867 MATCHES &bull; 200,999 BALL-BY-BALL DELIVERIES &bull; 5 IPL SEASONS (2022&ndash;2026) &bull; 140 T20I SERIES &bull; 10,761 BATTER PRESSURE BALLS &bull; 19,612 BOWLER PRESSURE BALLS &bull; HALLA BOL! &bull;&nbsp;</span>
+      <span>867 MATCHES &bull; 200,999 BALL-BY-BALL DELIVERIES &bull; 5 IPL SEASONS (2022&ndash;2026) &bull; 140 T20I SERIES &bull; 10,761 BATTER PRESSURE BALLS &bull; 19,612 BOWLER PRESSURE BALLS &bull; HALLA BOL! &bull;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 4. PROBLEM VS SOLUTION CARDS                                              -->
+  <!-- ========================================================================= -->
+  <section class="py-16 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-block bg-black text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest border border-black mb-3">
+        TACTICAL DIAGNOSIS
+      </div>
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-black tracking-tight">
+        TRADITIONAL SCOUTING VS. <br/>
+        <span class="text-rrpink">PRESSURE-PROOF REALITY</span>
+      </h2>
+      <p class="font-body text-gray-700 mt-3 text-base">
+        Why standard tournament batting averages and economy figures mislead auction war rooms.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- Problem Card: Traditional Scouting -->
+      <div class="bg-gray-100 border-2 border-dashed border-gray-400 p-8 shadow-hard-sm opacity-85 rounded-[2rem] flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-full bg-red-100 border-2 border-red-500 flex items-center justify-center font-black text-red-600 text-xl">
+              &times;
+            </div>
+            <div>
+              <h3 class="font-heading font-black text-xl text-black">Traditional Raw Averages</h3>
+              <p class="text-xs font-mono text-gray-500">How franchises get burned at auctions</p>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 font-bold text-lg">&times;</span>
+              <span><b>Flat-Track Inflation:</b> Players run up high averages in dead-rubber matches or when chasing 6.5 RRR.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 font-bold text-lg">&times;</span>
+              <span><b>Death-Overs Blind Spot:</b> Ignores that RR conceded <b>11.20 rpo</b> at the death in 2026 beyond Jofra Archer.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 font-bold text-lg">&times;</span>
+              <span><b>Small-Sample Flukes:</b> Part-time tailenders show large uplift on tiny 15-ball domestic samples.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 font-bold text-lg">&times;</span>
+              <span><b>Overseas Slot Waste:</b> Blowing 60% of purse on overseas power when an Indian finisher was needed.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-gray-300 font-mono text-xs text-red-600 font-bold">
+          RESULT: Early playoff exits and high death bowling leakage.
+        </div>
+      </div>
+
+      <!-- Solution Card: Royals Clutch Differential -->
+      <div class="bg-rrpink bg-dot-pattern border-2 border-black p-8 shadow-hard-md rounded-[2rem] flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-black border-2 border-black flex items-center justify-center font-black text-rrgold text-xl shadow-hard-sm">
+              &check;
+            </div>
+            <div>
+              <h3 class="font-heading font-black text-2xl text-white drop-shadow-[2px_2px_0px_#000]">
+                Royals Clutch Differential (RCD)
+              </h3>
+              <p class="text-xs font-mono text-white/90">Our proprietary pressure-isolation model</p>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-black bg-white p-6 border-2 border-black shadow-hard-sm">
+            <li class="flex items-start gap-3">
+              <span class="bg-black text-white w-5 h-5 flex items-center justify-center text-xs font-bold shrink-0">&check;</span>
+              <span><b>Strict Pressure Triggers:</b> Isolates chases requiring &ge; 9.00 RRR and death finishes (&le; 36 runs).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="bg-black text-white w-5 h-5 flex items-center justify-center text-xs font-bold shrink-0">&check;</span>
+              <span><b>Coefficient of Variation (CV):</b> Stress-tests match-to-match consistency to weed out one-hit wonders.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="bg-black text-white w-5 h-5 flex items-center justify-center text-xs font-bold shrink-0">&check;</span>
+              <span><b>Direct Squad Gap Mapping:</b> Solves Archer's death partner (Arshdeep/Pathirana) and Indian finishing (Shashank).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="bg-black text-white w-5 h-5 flex items-center justify-center text-xs font-bold shrink-0">&check;</span>
+              <span><b>Jaipur Stadium Dimension Fit:</b> Factors in SMS Stadium's long square boundaries (68&ndash;72m).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 pt-4 border-t-2 border-black font-mono text-xs text-white font-extrabold uppercase">
+          RESULT: A balanced, battle-tested roster capable of closing championships.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. THREE METHODOLOGICAL MODELS WITH MOVING ANIMATIONS                     -->
+  <!-- ========================================================================= -->
+  <section id="models" class="py-20 bg-rrnavy border-b-2 border-black px-4 md:px-8 text-white">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="bg-rrpink text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest border border-black shadow-hard-sm">
+          TRIANGULATED ARCHITECTURE
+        </span>
+        <h2 class="font-heading font-black text-3xl md:text-5xl text-white tracking-tight mt-3">
+          HOW I TRIANGULATED THE DATA
+        </h2>
+        <p class="text-rrsage text-base mt-2">
+          Three independent statistical lenses ensure no pick is an artifact of a single mathematical assumption.
+        </p>
+      </div>
+
+      <!-- 3 Steps Connected by Line with Kinetic Hover Animations -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        
+        <!-- Step 01: Royals Clutch Differential (What we selected) -->
+        <a href="strategy.html#type1" class="formula-card bg-rrnavydark border-2 border-black p-8 shadow-hard-md flex flex-col justify-between block group text-left">
+          <div>
+            <div class="w-16 h-16 rounded-full bg-rrnavy border-2 border-black glow-pink flex items-center justify-center font-heading font-black text-2xl text-white mb-6 group-hover:scale-110 transition-transform">
+              01
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-mono font-bold text-rrpink uppercase tracking-widest">SELECTED FIRST PRIORITY</span>
+              <span class="text-[10px] font-mono text-gray-400 group-hover:text-white">&rarr; VIEW TYPE 1</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white mb-3 group-hover:text-rrpink transition-colors">Royals Clutch Diff (RCD)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Measures whether a player steps UP versus their own baseline when required run rate &ge; 9.0 or in death finishes (&le; 36 runs). 
+              Audited to remove tailenders and small-sample domestic noise.
+            </p>
+          </div>
+          
+          <!-- Down-slide Selection Summary -->
+          <div class="mt-6 pt-4 border-t-2 border-gray-700 bg-rrnavy p-3 border border-black">
+            <span class="text-[10px] font-mono font-bold text-rrpink uppercase block">OUR SELECTED TOP TARGETS:</span>
+            <div class="text-xs text-white font-mono mt-1">
+              &bull; <b>Batters:</b> Shashank Singh, Najibullah, Klaasen<br/>
+              &bull; <b>Bowlers:</b> Bumrah, Pathirana, Arshdeep Singh
+            </div>
+            <div class="mt-2 text-[10px] font-mono text-rrpink font-bold group-hover:underline">
+              CLICK TO VIEW FULL TYPE 1 STRATEGY &rarr;
+            </div>
+          </div>
+        </a>
+
+        <!-- Step 02: Dynamic In-Game Leverage (What we selected) -->
+        <a href="strategy.html#type2" class="formula-card bg-rrnavydark border-2 border-black p-8 shadow-hard-md flex flex-col justify-between block group text-left">
+          <div>
+            <div class="w-16 h-16 rounded-full bg-rrnavy border-2 border-black glow-gold flex items-center justify-center font-heading font-black text-2xl text-rrgold mb-6 group-hover:scale-110 transition-transform">
+              02
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-mono font-bold text-rrgold uppercase tracking-widest">CONTINUOUS SCORING</span>
+              <span class="text-[10px] font-mono text-gray-400 group-hover:text-white">&rarr; VIEW TYPE 2</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white mb-3 group-hover:text-rrgold transition-colors">DLS-Leverage Model</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Assigns every ball a 0.0 to 1.0 pressure index using running match deficit, balls left, wickets down, and knockout stage. 
+              Ranks performance on the top quartile (CPI &ge; 0.066).
+            </p>
+          </div>
+
+          <!-- Down-slide Selection Summary -->
+          <div class="mt-6 pt-4 border-t-2 border-gray-700 bg-rrnavy p-3 border border-black">
+            <span class="text-[10px] font-mono font-bold text-rrgold uppercase block">OUR SELECTED TOP TARGETS:</span>
+            <div class="text-xs text-white font-mono mt-1">
+              &bull; <b>Batters:</b> Sameer Rizvi, Ferreira, Suryakumar<br/>
+              &bull; <b>Bowlers:</b> Akeal Hosein, Arshdeep, Pathirana
+            </div>
+            <div class="mt-2 text-[10px] font-mono text-rrgold font-bold group-hover:underline">
+              CLICK TO VIEW FULL TYPE 2 STRATEGY &rarr;
+            </div>
+          </div>
+        </a>
+
+        <!-- Step 03: Tactical Role Execution (What we selected) -->
+        <a href="strategy.html#type3" class="formula-card bg-rrnavydark border-2 border-black p-8 shadow-hard-md flex flex-col justify-between block group text-left">
+          <div>
+            <div class="w-16 h-16 rounded-full bg-rrnavy border-2 border-black glow-blue flex items-center justify-center font-heading font-black text-2xl text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+              03
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest">FUNCTIONAL SQUAD FIT</span>
+              <span class="text-[10px] font-mono text-gray-400 group-hover:text-white">&rarr; VIEW TYPE 3</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white mb-3 group-hover:text-blue-400 transition-colors">Role Execution (TREI)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Decomposes match situations into 5 concrete tactical scenarios (S1 Death Bat, S2 Chase Finish, S3 Rebuild, S4 Death Bowl, S5 Low-Total Defense). 
+              Scores by functional auction role.
+            </p>
+          </div>
+
+          <!-- Down-slide Selection Summary -->
+          <div class="mt-6 pt-4 border-t-2 border-gray-700 bg-rrnavy p-3 border border-black">
+            <span class="text-[10px] font-mono font-bold text-blue-400 uppercase block">OUR SELECTED TOP TARGETS:</span>
+            <div class="text-xs text-white font-mono mt-1">
+              &bull; <b>Batters:</b> Shashank Singh, Brook, Markram<br/>
+              &bull; <b>Bowlers:</b> Rashid Khan, Arshdeep, Akeal Hosein
+            </div>
+            <div class="mt-2 text-[10px] font-mono text-blue-400 font-bold group-hover:underline">
+              CLICK TO VIEW FULL TYPE 3 STRATEGY &rarr;
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. CV CONSISTENCY AUDIT SECTION                                            -->
+  <!-- ========================================================================= -->
+  <section id="consistency" class="py-20 bg-slate-50 border-b-2 border-black px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-block bg-rrpink text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest border border-black mb-3 shadow-hard-sm">
+          RELIABILITY & STABILITY AUDIT
+        </div>
+        <h2 class="font-heading font-black text-3xl md:text-5xl text-black tracking-tight">
+          COEFFICIENT OF VARIATION (CV) AUDIT
+        </h2>
+        <p class="font-body text-gray-700 mt-3 text-base">
+          Testing match-to-match volatility: A lower CV indicates dependable, repeatable execution under pressure rather than one-off statistical anomalies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Batter Consistency Card -->
+        <div class="formula-card bg-white border-2 border-black p-6 shadow-hard-md">
+          <div class="flex items-center justify-between mb-4 pb-2 border-b-2 border-black">
+            <h3 class="font-heading font-black text-xl text-black">BATTERS: MATCH CONSISTENCY</h3>
+            <span class="bg-rrpink text-white font-mono text-xs font-bold px-2 py-0.5 border border-black">CV (pSR)</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="bg-gray-100 border-b border-black font-mono text-gray-700">
+                  <th class="p-2">Player</th>
+                  <th class="p-2 text-center">Matches</th>
+                  <th class="p-2 text-center">CV Score</th>
+                  <th class="p-2">Scout's Consistency Read</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-2 font-bold">Shashank Singh</td><td class="p-2 text-center">11</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.457</td><td class="p-2 text-gray-600">Consistent Indian chase finisher</td></tr>
+                <tr><td class="p-2 font-bold">Najibullah Zadran</td><td class="p-2 text-center">12</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.480</td><td class="p-2 text-gray-600">Reliable boundary closer</td></tr>
+                <tr><td class="p-2 font-bold">Heinrich Klaasen</td><td class="p-2 text-center">14</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.520</td><td class="p-2 text-gray-600">Consistent spin accelerator</td></tr>
+                <tr><td class="p-2 font-bold">Tristan Stubbs</td><td class="p-2 text-center">12</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.523</td><td class="p-2 text-gray-600">360&deg; death execution</td></tr>
+                <tr><td class="p-2 font-bold">Rinku Singh</td><td class="p-2 text-center">14</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.481</td><td class="p-2 text-gray-600">Lowest dot % in overs 18&ndash;20</td></tr>
+                <tr><td class="p-2 font-bold">Quinton de Kock</td><td class="p-2 text-center">22</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.500</td><td class="p-2 text-gray-600">Consistent power acceleration</td></tr>
+                <tr class="bg-emerald-50"><td class="p-2 font-bold">Suryakumar Yadav</td><td class="p-2 text-center">11</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.439</td><td class="p-2 text-emerald-800 font-bold">Lowest CV in entire dataset</td></tr>
+                <tr><td class="p-2 font-bold">Tim David</td><td class="p-2 text-center">19</td><td class="p-2 text-center font-mono font-bold text-amber-700">0.585</td><td class="p-2 text-gray-600">High-impact boundary power</td></tr>
+                <tr><td class="p-2 font-bold">Nicholas Pooran</td><td class="p-2 text-center">18</td><td class="p-2 text-center font-mono font-bold text-amber-700">0.579</td><td class="p-2 text-gray-600">Multi-phase enforcer</td></tr>
+                <tr><td class="p-2 font-bold">Vaibhav Suryavanshi</td><td class="p-2 text-center">6</td><td class="p-2 text-center font-mono font-bold text-purple-700">0.660</td><td class="p-2 text-gray-600">High upside young ceiling</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bowler Consistency Card -->
+        <div class="formula-card bg-white border-2 border-black p-6 shadow-hard-md">
+          <div class="flex items-center justify-between mb-4 pb-2 border-b-2 border-black">
+            <h3 class="font-heading font-black text-xl text-black">BOWLERS: MATCH CONSISTENCY</h3>
+            <span class="bg-rrblue text-white font-mono text-xs font-bold px-2 py-0.5 border border-black">CV (pEco)</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="bg-gray-100 border-b border-black font-mono text-gray-700">
+                  <th class="p-2">Player</th>
+                  <th class="p-2 text-center">Matches</th>
+                  <th class="p-2 text-center">CV Score</th>
+                  <th class="p-2">Scout's Consistency Read</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-2 font-bold">Jasprit Bumrah</td><td class="p-2 text-center">27</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.550</td><td class="p-2 text-gray-600">Gold-standard containment</td></tr>
+                <tr><td class="p-2 font-bold">Matheesha Pathirana</td><td class="p-2 text-center">26</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.509</td><td class="p-2 text-gray-600">Highly consistent sling yorkers</td></tr>
+                <tr class="bg-emerald-50"><td class="p-2 font-bold">Arshdeep Singh</td><td class="p-2 text-center">60</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.490</td><td class="p-2 text-emerald-800 font-bold">Safest bet: Proven over 60 matches</td></tr>
+                <tr><td class="p-2 font-bold">Rashid Khan</td><td class="p-2 text-center">39</td><td class="p-2 text-center font-mono font-bold text-amber-700">0.836</td><td class="p-2 text-gray-600">Wicket-taker (higher variance)</td></tr>
+                <tr><td class="p-2 font-bold">Akeal Hosein</td><td class="p-2 text-center">9</td><td class="p-2 text-center font-mono font-bold text-emerald-700">0.497</td><td class="p-2 text-gray-600">Elite Powerplay containment</td></tr>
+                <tr><td class="p-2 font-bold">Mustafizur Rahman</td><td class="p-2 text-center">24</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.550</td><td class="p-2 text-gray-600">Consistent death cutters</td></tr>
+                <tr><td class="p-2 font-bold">Haris Rauf</td><td class="p-2 text-center">18</td><td class="p-2 text-center font-mono font-bold text-amber-700">0.620</td><td class="p-2 text-gray-600">Express pace strike weapon</td></tr>
+                <tr><td class="p-2 font-bold">Harshal Patel</td><td class="p-2 text-center">30</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.580</td><td class="p-2 text-gray-600">High-volume slower balls</td></tr>
+                <tr><td class="p-2 font-bold">Pramod Madushan</td><td class="p-2 text-center">8</td><td class="p-2 text-center font-mono font-bold text-amber-700">0.700</td><td class="p-2 text-gray-600">Significant economy drop</td></tr>
+                <tr><td class="p-2 font-bold">T Natarajan</td><td class="p-2 text-center">22</td><td class="p-2 text-center font-mono font-bold text-blue-700">0.540</td><td class="p-2 text-gray-600">Precision death yorkers</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. AUCTION PURSE TIERS (Navigates to auction.html in same tab)            -->
+  <!-- ========================================================================= -->
+  <section id="auction" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-block bg-black text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest border border-black mb-3">
+        OPTION POSITIONS & AUCTION PURSE
+      </div>
+      <h2 class="font-heading font-black text-3xl md:text-5xl text-black tracking-tight">
+        OPTION POSITIONS: HOW RR SHOULD <br/>
+        <span class="text-rrpink">ALLOCATE AUCTION PURSE</span>
+      </h2>
+      <p class="font-body text-gray-700 mt-3 text-base">
+        Click any tier below to open the complete deep-dive Option Positions board in the same window.
+      </p>
+    </div>
+
+    <!-- 4 Tiers Grid (Opens auction.html in same tab) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Tier 1 -->
+      <a href="auction.html" class="asymmetric-card p-6 flex flex-col justify-between border-t-4 border-t-rrblue block group">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="bg-rrblue text-white font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+              TIER 1 &bull; 30&ndash;35% PURSE
+            </span>
+            <span class="text-xs font-bold font-mono group-hover:translate-x-1 transition-transform">&rarr; EXPAND</span>
+          </div>
+          <h3 class="font-heading font-black text-2xl text-black mt-3 group-hover:text-rrblue transition-colors">FRONTLINE DEATH SEAMER</h3>
+          <p class="text-xs text-gray-700 mt-2 font-mono">
+            <b>Target:</b> Arshdeep Singh (Alt: Pathirana / Bumrah)
+          </p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            All-in non-negotiable priority. Pairs with Jofra Archer to permanently solve RR's 11.2 rpo death leak.
+          </p>
+        </div>
+        <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-rrblue flex items-center justify-between">
+          <span>STATUS: NON-NEGOTIABLE</span>
+          <span>OPEN BOARD &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Tier 2 -->
+      <a href="auction.html" class="asymmetric-card p-6 flex flex-col justify-between border-t-4 border-t-rrpink block group">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="bg-rrpink text-white font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+              TIER 2 &bull; 18&ndash;22% PURSE
+            </span>
+            <span class="text-xs font-bold font-mono group-hover:translate-x-1 transition-transform">&rarr; EXPAND</span>
+          </div>
+          <h3 class="font-heading font-black text-2xl text-black mt-3 group-hover:text-rrpink transition-colors">INDIAN CLUTCH FINISHER</h3>
+          <p class="text-xs text-gray-700 mt-2 font-mono">
+            <b>Target:</b> Shashank Singh
+          </p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Gives RR an Indian finisher at No. 6/7. Eliminates Hetmyer-dependency, lets RR rotate Dubey flexibly.
+          </p>
+        </div>
+        <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-rrpink flex items-center justify-between">
+          <span>STATUS: PRIMARY VALUE PLAY</span>
+          <span>OPEN BOARD &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Tier 3 -->
+      <a href="auction.html" class="asymmetric-card p-6 flex flex-col justify-between border-t-4 border-t-rrgold block group">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="bg-rrgold text-black font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+              TIER 3 &bull; 12&ndash;15% PURSE
+            </span>
+            <span class="text-xs font-bold font-mono group-hover:translate-x-1 transition-transform">&rarr; EXPAND</span>
+          </div>
+          <h3 class="font-heading font-black text-2xl text-black mt-3 group-hover:text-amber-600 transition-colors">SPIN SPECIALIST & POWER</h3>
+          <p class="text-xs text-gray-700 mt-2 font-mono">
+            <b>Target:</b> Akeal Hosein / H. Klaasen
+          </p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Akeal gives RR early Powerplay defense (6.18 eco) tailored for Jaipur; Klaasen destroys spin.
+          </p>
+        </div>
+        <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-black flex items-center justify-between">
+          <span>STATUS: TACTICAL MATCH-UP</span>
+          <span>OPEN BOARD &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Tier 4 -->
+      <a href="auction.html" class="asymmetric-card p-6 flex flex-col justify-between border-t-4 border-t-black block group">
+        <div>
+          <span class="bg-black text-white font-mono text-[11px] font-bold px-2 py-0.5 border border-black uppercase">
+            TIER 4 &bull; 5&ndash;10% PURSE
+          </span>
+          <h3 class="font-heading font-black text-2xl text-black mt-3">HIGH-UPSIDE VALUE DEPTH</h3>
+          <p class="text-xs text-gray-700 mt-2 font-mono">
+            <b>Target:</b> T Natarajan / P. Madushan
+          </p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Cost-effective specialist death bowling depth to rotate through the 14-match league stage without dropping yorker precision.
+          </p>
+        </div>
+        <div class="mt-6 pt-3 border-t-2 border-black font-mono text-xs font-bold text-gray-700 flex items-center justify-between">
+          <span>STATUS: SQUAD RESILIENCE</span>
+          <span>OPEN BOARD &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. METHODOLOGY SECTION WITH MOVING KINETIC ANIMATIONS                     -->
+  <!-- ========================================================================= -->
+  <section id="methodology" class="py-20 bg-white border-y-2 border-black px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-block bg-rrnavy text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest border border-black mb-3 shadow-hard-sm">
+          MATHEMATICAL SPECIFICATION
+        </div>
+        <h2 class="font-heading font-black text-3xl md:text-5xl text-black tracking-tight">
+          DATA ARCHITECTURE & FORMULAS
+        </h2>
+        <p class="font-body text-gray-700 mt-3 text-base">
+          Interactive mathematical specification: Hover over either equation to see kinetic displacement animation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Formula 1: Batting Clutch Index -->
+        <div class="formula-card bg-slate-50 border-2 border-black p-6 shadow-hard-md">
+          <div class="flex items-center justify-between mb-3">
+            <span class="bg-rrpink text-white font-mono text-xs font-bold px-2 py-0.5 border border-black">EQUATION 01</span>
+            <span class="font-heading font-black text-sm text-black">BATTER CLUTCH FORMULA</span>
+          </div>
+          <div class="bg-white border border-black p-4 font-mono text-xs font-bold text-gray-900 leading-relaxed mb-4 shadow-hard-sm hover:translate-x-1 transition-transform">
+            Clutch<sub>bat</sub> = 0.40 &times; z(SR<sub>pressure</sub>) + 0.25 &times; z(Avg<sub>pressure</sub>) + 0.15 &times; z(Death SR) + 0.10 &times; z(Boundary%) + 0.10 &times; z(Volume)
+          </div>
+          <p class="text-xs text-gray-700 leading-relaxed">
+            Pressure strike rate and average carry the heaviest weight because a true clutch finisher must score rapidly while staying not out to close chases. Death SR ensures direct overs 16&ndash;20 execution.
+          </p>
+        </div>
+
+        <!-- Formula 2: Bowling Clutch Index -->
+        <div class="formula-card bg-slate-50 border-2 border-black p-6 shadow-hard-md">
+          <div class="flex items-center justify-between mb-3">
+            <span class="bg-rrblue text-white font-mono text-xs font-bold px-2 py-0.5 border border-black">EQUATION 02</span>
+            <span class="font-heading font-black text-sm text-black">BOWLER CLUTCH FORMULA</span>
+          </div>
+          <div class="bg-white border border-black p-4 font-mono text-xs font-bold text-gray-900 leading-relaxed mb-4 shadow-hard-sm hover:translate-x-1 transition-transform">
+            Clutch<sub>bowl</sub> = 0.30 &times; z(Pressure Wkts) + 0.25 &times; z(Death Dot%) + 0.20 &times; z(Pressure Econ) + 0.15 &times; z(Econ Improve) + 0.10 &times; z(Volume)
+          </div>
+          <p class="text-xs text-gray-700 leading-relaxed">
+            Pressure wicket volume and death dot-ball percentage lead, because defensive containment alone without taking wickets does not close out IPL matches. Economy improvement rewards bowlers who tighten when it matters.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 9. DENSE UTILITY FOOTER (#0a192f Charcoal/Navy, 4 Columns)               -->
+  <!-- ========================================================================= -->
+  <footer class="bg-rrnavy border-t-2 border-black text-white pt-16 pb-12 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-700">
+      
+      <!-- Col 1: About Platform -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 bg-white border-2 border-black p-0.5 shadow-hard-sm">
+            <img src="rr_logo.png" alt="RR Logo" class="h-full w-full object-contain">
+          </div>
+          <span class="font-heading font-black text-xl tracking-tight text-white">ROYALS SCOUT</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          SupeRR Selector Season 2 &bull; Round 1 Scouting Strategy Submission. Built for the Rajasthan Royals Analytics War Room.
+        </p>
+        <div class="font-mono text-xs text-rrgold font-bold">
+          HALLA BOL &bull; IPL 2027 AUCTION
+        </div>
+      </div>
+
+      <!-- Col 2: Final Batting Picks Link (Opens picks.html in same tab) -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-rrsage">Top 10 Batters (Audited)</h4>
+        <ul class="text-xs text-gray-400 space-y-1.5 font-mono">
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">1. Shashank Singh (Ind)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">2. Najibullah Zadran (Afg)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">3. Heinrich Klaasen (SA)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">4. Tristan Stubbs (SA)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">5. Rinku Singh (Ind)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">6. Quinton de Kock (SA)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">7. Suryakumar Yadav (Ind)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">8. Tim David (Aus)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">9. Nicholas Pooran (WI)</a></li>
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">10. Vaibhav Suryavanshi (Ind)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Final Bowling Picks Link (Opens picks.html in same tab) -->
+      <div class="space-y-3">
+        <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-rrsage">Top 10 Bowlers (Audited)</h4>
+        <ul class="text-xs text-gray-400 space-y-1.5 font-mono">
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">1. Jasprit Bumrah (Ind)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">2. Matheesha Pathirana (SL)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">3. Arshdeep Singh (Ind)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">4. Rashid Khan (Afg)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">5. Akeal Hosein (WI)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">6. Mustafizur Rahman (Ban)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">7. Haris Rauf (Pak &bull; Feas. Note)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">8. Harshal Patel (Ind)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">9. Pramod Madushan (SL)</a></li>
+          <li><a href="picks.html" class="hover:text-rrblue transition-colors">10. T Natarajan (Ind)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Official Downloads & Strategic Portals -->
+      <div class="space-y-4">
+        <h4 class="font-heading font-bold text-xs uppercase tracking-widest text-rrsage">Strategic Portals</h4>
+        <ul class="text-xs text-gray-300 space-y-2 font-mono">
+          <li><a href="picks.html" class="hover:text-rrpink transition-colors">&rarr; Final 10 Picks Roster</a></li>
+          <li><a href="auction.html" class="hover:text-rrblue transition-colors">&rarr; Option Positions & Auction Board</a></li>
+          <li><a href="strategy.html" class="hover:text-rrgold transition-colors">&rarr; Type 1, 2 & 3 Strategy Models</a></li>
+        </ul>
+        <a href="RR_Pressure_Performance_Report.pdf" download="RR_Pressure_Performance_Report.pdf" class="nb-btn-pink block text-center py-2.5 text-xs uppercase tracking-wider mt-4">
+          📄 DOWNLOAD 19-PAGE PDF
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Copyright Notice -->
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 font-mono gap-4">
+      <div>
+        &copy; 2026 Author Original Scouting Strategy. Built for Rajasthan Royals SupeRR Selector S2.
+      </div>
+      <div>
+        DATA PACK: IPL & T20I (2022&ndash;2026) &bull; 867 MATCHES &bull; 200,999 DELIVERIES
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

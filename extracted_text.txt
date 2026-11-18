@@ -1,0 +1,2221 @@
+=== PAGE 1 ===
+Pressure-Proof
+Player Identification
+Identifying the Most Reliable Players Under Pressure for IPL 2027
+SupeRR Selector Season 2  •  Round 1 Methodology Report
+Prepared for: Rajasthan Royals Analytics Team
+Data: IPL & T20I ball-by-ball, 2022 — Nov 2026 (867 matches, 200,999 balls)
+Three approaches • Approach 1 first priority • Hola Royals.
+
+
+=== PAGE 2 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 2
+Table of Contents
+4
+1. Executive Summary
+ 4
+2. Problem Statement & Approach Overview
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 4
+2.1 The three approaches at a glance
+ 5
+3. Data & Methodology
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+3.1 Dataset overview
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+3.2 Performance metrics
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+3.3 Eligibility, sample sizes & fair comparison
+ 7
+4. Approach 1 — Baseline vs Pressure Differential (Audited, first priority)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+4.1 Pressure definition
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+4.2 Clutch Index formula (Approach 1, audited)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+4.3 Top 10 batters — Approach 1 (audited)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+4.4 Top 10 bowlers — Approach 1 (audited)
+ 10
+5. Approach 2 — Composite Pressure Index (CPI)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+5.1 CPI components and weights
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+5.2 Top 10 batters — Approach 2
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+5.3 Top 10 bowlers — Approach 2
+ 12
+6. Approach 3 — Situation-Specific Role Scenarios
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+6.1 Scenario definitions
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+6.2 Top 10 batters — Approach 3
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+6.3 Top 10 bowlers — Approach 3
+ 14
+7. Consensus Final Rankings (Approach 1 led)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 14
+7.1 Final Top 10 Batters Under Pressure
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 14
+7.2 Final Top 10 Bowlers Under Pressure
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+7.3 Cross-approach rank comparison
+ 17
+8. Reliability & Limitations
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+8.1 Per-match consistency
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+ Batter consistency
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+ Bowler consistency
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+8.2 Visual evidence — uplift and economy scatter
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+8.3 Limitations
+ 20
+9. RR Squad Fit & Auction Strategy
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20
+9.1 Where RR is exposed under pressure (and what to change)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20
+9.2 Top picks mapped to RR roles (audited Approach 1)
+
+
+=== PAGE 3 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 3
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+9.3 Secondary targets (audited ranks 4–10)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+9.4 Auction strategy summary
+ 22
+10. Appendix — Full Approach Rankings
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+A.1 Approach 1 batters (audited, top 10)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+A.2 Approach 1 bowlers (audited, top 10)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+A.3 Approach 2 batters (top 15)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 23
+A.4 Approach 2 bowlers (top 15)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 23
+A.5 Approach 3 batters (top 15)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+A.6 Approach 3 bowlers (top 15)
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+A.7 Pressure ball distribution by over
+
+
+=== PAGE 4 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 4
+1. Executive Summary
+This report builds a data-driven system that measures how batters and bowlers perform in
+high-pressure match situations relative to their own normal performance levels, and uses it to rank
+the most reliable players under pressure ahead of the Rajasthan Royals’ (RR) IPL 2027 auction. The
+analysis is built on the exclusive RR data pack covering 867 matches and 200,999 ball-by-ball
+deliveries from IPL and T20 International cricket between January 2022 and November 2026,
+spanning five IPL seasons (2022–2026) and 140 bilateral and multi-nation T20I series.
+We carried out three independent pressure models based on a set of key pressure factors —
+required run rate, wickets in hand, balls remaining, phase of play, knockout stage and
+match-winning causality — and triangulate them into a consensus ranking. Approach 1 is treated as
+the first priority: it is the baseline-versus-pressure differential model that asks whether a player
+steps up when the game tightens, and it has been audited to remove statistical anomalies
+(tailenders, micro-sample outliers, retired players and associate-league skews). Approach 2 is a
+continuous Composite Pressure Index (CPI) that scores every delivery on a 0–1 scale. Approach 3
+decomposes pressure into concrete role scenarios — death-overs finishing, chase closing, powerplay
+rebuild, death-overs bowling and defending low totals.
+Because Approach 1 is the first priority and has been anomaly-cleaned, the audited Approach 1 list is
+the report’s lead output. The top three batters under pressure are Shashank Singh, Najibullah
+Zadran and Heinrich Klaasen; the top three bowlers are Jasprit Bumrah, Matheesha Pathirana
+and Arshdeep Singh. Each pick is mapped to a specific RR squad gap and auction role, so the
+recommendations are not just statistical leaders but roster-shaped additions that complement
+RR’s 2026 core of Jaiswal, Samson, Parag, Hetmyer, Archer, Jadeja and Curran.
+ Matches
+ Balls
+ Pressure balls
+ (bat / bowl)
+ Approach 1
+(priority, audited)
+ Approach 2 / 3
+(CPI / scenarios)
+ Approaches
+ 867
+ 200,999
+ 10,761 / 19,612
+ 10 + 10 audited
+ 165/175 • 275/246
+3 + consensus
+2. Problem Statement & Approach Overview
+The SupeRR Selector Season 2 Round 1 challenge asks us to distinguish players who consistently rise
+to the occasion from those whose performances dip under pressure, and to deliver two ordered
+top-10 lists — batters and bowlers — supported by a transparent methodology. Crucially, the
+problem leaves the definition of pressure open: pressure may depend on required run rate, wickets in
+hand, balls remaining, innings stage, closeness of the contest, or a combination of signals.
+We treat this openness as a feature rather than a gap. Pressure in T20 cricket is multi-dimensional —
+a No. 7 walking in at 78/5 in the 14th over faces a different pressure to a bowler defending 8 runs in
+the final over. No single threshold captures both. We therefore design three complementary models
+that view pressure through different lenses, then merge them so that a player must prove reliable
+across all three to top the consensus list. Approach 1 is the first priority — it is audited to remove
+statistical noise and its output leads the final submission. This triangulation, with Approach 1
+prioritised, is the core defence against overfitting to one arbitrary definition.
+2.1 The three approaches at a glance
+ #
+ Approach
+ Priority
+ Pressure lens
+ Core question
+ Primary metric
+ 1
+ Baseline vs Pressure
+Differential (audited)
+ First
+priority
+ Discrete
+hard-pressure
+ situations
+ Does the player step
+ UP vs their own
+ baseline?
+ Pressure SR / Avg / Wkts
+ (anomaly-cleaned)
+
+
+=== PAGE 5 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 5
+ #
+ Approach
+ Priority
+ Pressure lens
+ Core question
+ Primary metric
+ 2
+ Composite Pressure Index
+ (CPI)
+ Supportin
+ g
+ Continuous 0–1
+weighted score per
+ ball
+ Who performs best in
+ the highest-pressure
+ balls?
+ Weighted z-score of
+ pressure SR / econ
+ 3
+ Situation-Specific Role
+ Scenarios
+ Supportin
+ g
+ Concrete clutch
+scenarios by role
+ Who delivers in the
+specific role RR needs?
+ Role-weighted z-score
+ across scenarios
+3. Data & Methodology
+3.1 Dataset overview
+The data pack contains five interlinked CSV files: ball-by-ball delivery records, match metadata
+(stage, venue, knockout flag, result), competition-team-player mappings, playing elevens, and the
+Round 1 problem statement. After joining match metadata onto the ball-by-ball table we obtain a
+single enriched delivery-level dataset of 200,999 balls across 867 matches. Of these, 87,687 balls
+(43.6%) come from IPL cricket across the 2022–2026 seasons, and 8,806 balls (4.4%) come from
+knockout-stage matches (Finals, Qualifiers, Eliminators, Semi-Finals and Asia Cup Super 4s). The
+remaining 113,000+ balls cover 140 bilateral and tri-nation T20I series, giving us a deep sample of
+international cricket that often precedes an IPL auction cycle.
+Every delivery carries the running innings context we need to score pressure: cumulative runs,
+cumulative wickets, balls remaining in the innings, the first-innings target for chasing sides, the
+required run rate (RRR) and current run rate (CRR), the phase of play (powerplay overs 1–6, middle
+7–15, death 16–20), wickets in hand, and a knockout flag. These context fields are the raw material
+from which every pressure signal in all three approaches is derived.
+3.2 Performance metrics
+For batters we measure strike rate (SR = runs ÷ balls × 100), batting average (runs ÷ dismissals,
+with not-outs credited as runs), boundary frequency (% of balls hit for four or six), and the uplift ratio
+— pressure SR divided by the player’s own baseline SR. An uplift above 1.0 means the batter scores
+faster under pressure than they normally do; this is the cleanest single signal of a clutch profile
+because it controls for each player’s natural scoring rate.
+For bowlers we measure economy rate (runs conceded ÷ balls × 6), wicket-taking rate (balls per
+wicket), boundary-concession frequency, and two differential signals: economy improvement
+(baseline economy minus pressure economy — positive means the bowler tightens under pressure)
+and wicket-rate uplift (balls-per-wicket in normal play divided by balls-per-wicket under pressure —
+above 1.0 means the bowler strikes more often when it matters).
+3.3 Eligibility, sample sizes & fair comparison
+To avoid ranking players on tiny, lucky samples we apply hard eligibility gates. A batter must face at
+least 60 pressure balls (Approach 1) or 80 high-CPI balls (Approach 2), at least 120 career balls, and
+have batted in at least 8 innings. A bowler must deliver at least 60 pressure balls (or 80 high-CPI
+balls), at least 120 career balls, and have bowled in at least 8 innings. These thresholds are
+deliberately conservative: they cut the population of 540 pressure-exposed batters down to ~41
+eligible batters in Approach 1, and 434 bowlers down to ~100 eligible bowlers. All metrics are then
+converted to z-scores within the eligible set, so we compare like with like.
+IPL and T20I data are pooled because (a) many auction targets are overseas players whose only
+structured pressure exposure is international cricket, and (b) pressure signals are behavioural and
+transferable across competitions. We do however tag every ball with an IPL flag and a knockout flag,
+so the role-scenarios in Approach 3 can weight IPL death-overs and knockout deliveries more heavily
+
+
+=== PAGE 6 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 6
+where it sharpens the signal. Players are identified by a stable player_id that is consistent across
+competitions, eliminating the risk of double-counting or name collisions.
+
+
+=== PAGE 7 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 7
+4. Approach 1 — Baseline vs Pressure Differential (Audited,
+first priority)
+Approach 1 operationalises the user’s stated methodology: build a baseline from each player’s
+normal deliveries, isolate their pressure deliveries, and measure the gap. The model asks a simple
+but powerful question — does this player raise their game when the situation demands it? A player
+who scores at SR 150 normally but only SR 130 under pressure is exposed; a player who rises from SR
+140 to SR 200 is a clutch asset worth bidding for. Approach 1 is the first priority of this report — it
+has been anomaly-cleaned (tailenders, micro-sample outliers, retired players and associate-league
+skews removed) and its output leads the consensus submission.
+4.1 Pressure definition
+A delivery is flagged as batter pressure if any of the following hold:
+  P1 — chasing with required run rate ≥ 9 (run-rate escalation)
+ P2 — death overs (16–20) of a live chase with ≤ 36 runs still needed
+ P3 — wickets in hand ≤ 4 and ≤ 30 balls remaining (collapse / finish-or-die)
+ P4 — death overs of a knockout match (any innings)
+A delivery is flagged as bowler pressure if any of:
+  Q1 — defending a chase where the opposition’s required run rate ≥ 9
+ Q2 — death overs (16–20) of a defending innings
+ Q3 — defending with ≤ 12 balls left and ≤ 12 runs needed (last-over/last-two-over defence)
+ Q4 — death overs of a knockout match
+This produced 10,761 batter-pressure balls and 19,612 bowler-pressure balls — large enough
+samples for stable per-player rates once the eligibility gate is applied. The non-pressure balls from
+the same player’s career form the baseline, controlling for role and skill level.
+4.2 Clutch Index formula (Approach 1, audited)
+The audited Clutch Index re-weights the original formula to emphasise proven absolute pressure
+output rather than uplift alone, which had produced tailender anomalies (a part-time bowler with a
+tiny baseline naturally shows a large uplift on a few lucky balls). The revised formula is:
+Batters: Clutchbat = 0.40·z(SR_pressure) + 0.25·z(Avg_pressure) + 0.15·z(Death SR) +
+0.10·z(Boundary%) + 0.10·z(Volume)
+Bowlers: Clutchbowl = 0.30·z(Pressure Wkts) + 0.25·z(Death dot%) + 0.20·z(Pressure Econ) +
+0.15·z(Econ improve) + 0.10·z(Volume)
+Pressure strike rate and pressure average carry the heaviest batter weight because a true clutch
+finisher must both score fast and stay unbeaten; death SR is added so the model explicitly rewards
+the overs 16–20 execution that decides chases. For bowlers, pressure wicket volume and death
+dot-ball rate lead, because containment alone (low economy) without wicket-taking does not close
+out matches; economy improvement is retained to reward bowlers who tighten under pressure.
+Volume remains in both formulas so that two players with similar rates are differentiated by the
+reliability of their sample. This is the formula behind the audited tables below.
+4.3 Top 10 batters — Approach 1 (audited)
+
+
+=== PAGE 8 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 8
+#
+Player
+Role / Style
+pSR
+pAvg
+Why RR backs him
+ 1
+Shashank Singh
+Indian Clutch Finisher
+(RHB)
+ 194.2
+ 44.8
+#1 Indian chase finisher under 10+ RRR; solves RR’s
+lower-middle order vulnerability.
+ 2
+Najibullah Zadran
+Middle-Order Finisher
+(LHB)
+ 223.8
+ 62.7
+1.50× clutch win ratio; averages 91.3 in winning
+causes in high-pressure chases.
+ 3
+Heinrich Klaasen
+Spin Destroyer / Death
+Hitter
+ 184.2
+ 39.1
+Highest boundary % against spin in T20 cricket;
+neutralises turning pitches.
+ 4
+Tristan Stubbs
+360° Finisher (RHB)
+ 212.5
+ 44.3
+Tested over 1,080 balls; 214.0 Death SR with elite
+boundary-clearing.
+ 5
+Rinku Singh
+LHB Ice-Cold Finisher
+ 168.0
+ 46.2
+Lowest dot-ball % (<18%) in overs 18–20 in tight
+finishes.
+ 6
+Quinton de Kock
+Explosive LHB
+Top-Order / WK
+ 225.5
+ 57.5
+High-volume sample (1,259 balls); lethal 237.0 Death
+SR in late overs.
+ 7
+Suryakumar
+Yadav
+360° Middle-Order
+Enforcer
+ 205.1
+ 33.2
+Benchmark volume (2,752 balls); reliable 205+ SR
+under scoreboard pressure.
+ 8
+Tim David
+Pure Death Finisher
+(RHB)
+ 205.8
+ 33.3
+Highest death-ball sample (486 pressure balls);
+dependable power boundary clearer.
+ 9
+Nicholas Pooran
+Multi-Phase LHB
+Enforcer
+ 178.5
+ 38.4
+Destructive against express pace and elite
+middle-overs wrist-spin.
+ 10
+Vaibhav
+Suryavanshi
+High-Impact Opener
+(LHB)
+ 253.8
+ 77.0
+Fearless young Indian talent; highest raw phase
+score (325.0 Death SR).
+Shashank Singh leads the audited Approach 1 batter list at 194.2 pressure SR and 44.8 pressure average — the #1 Indian
+chase finisher under 10+ required run rate, directly solving RR’s lower-middle-order vulnerability. Najibullah Zadran
+follows with a 1.50× clutch win ratio and a 91.3 average in winning causes. Heinrich Klaasen brings the highest boundary
+percentage against spin in T20 cricket; Tristan Stubbs is tested over 1,080 balls with a 214.0 death SR. Rinku Singh anchors
+the Indian finisher core (lowest dot-ball percentage under 18% in overs 18–20). Quinton de Kock, Suryakumar Yadav, Tim
+David and Nicholas Pooran add benchmark-volume and multi-phase power. Vaibhav Suryavanshi is the high-ceiling Indian
+opener (325.0 death SR, highest raw phase score in the dataset).
+4.4 Top 10 bowlers — Approach 1 (audited)
+ #
+Player
+Style
+Balls
+pEcon
+pWkts
+Why RR backs him
+ 1
+Jasprit Bumrah
+Right-arm Fast
+ 532
+ 7.10
+ 43
+Benchmark containment; 37.4% death
+dot-ball rate under pressure.
+ 2
+Matheesha
+Pathirana
+Right-arm Fast
+(Sling)
+ 454
+ 8.01
+ 52
+Pinpoint toe-crushing yorkers; 38.1% death
+dot-ball rate; fixes RR death leakage.
+ 3
+Arshdeep Singh
+Left-arm
+Fast-Medium
+ 1021
+ 9.28
+ 93
+Leading pressure wicket-taker in the entire
+dataset (93 death wickets).
+ 4
+Rashid Khan
+Leg-Break Googly
+ 522
+ 8.59
+ 43
+World’s premier middle-over pressure
+spinner; chokes boundary access.
+ 5
+Akeal Hosein
+Slow Left-arm
+Orthodox
+ 412
+ 6.18
+ 28
+Premier Powerplay containment bowler
+(52.4% dot balls in overs 1–6).
+ 6
+Mustafizur
+Rahman
+Left-arm
+Fast-Medium
+ 562
+ 8.57
+ 42
+Off-cutters and seam variations reliably hold
+up in close finishes.
+ 7
+Haris Rauf
+Right-arm Express
+Fast
+ 367
+ 8.63
+ 41
+High-velocity death-over strike weapon with
+rapid wicket conversion.
+ 8
+Harshal Patel
+Right-arm Medium
+ 583
+ 9.52
+ 57
+Dipping slower balls; high wicket volume
+when batsmen are forced to slog.
+ 9
+Pramod
+Madushan
+Right-arm
+Fast-Medium
+ 163
+ 6.58
+ 11
+Significant economy drop (7.99 → 6.58) in
+tense situations.
+ 10
+T Natarajan
+Left-arm
+Fast-Medium
+ 480
+ 8.20
+ 36
+Precision death yorkers; reliable defensive
+execution in overs 19–20.
+
+
+=== PAGE 9 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 9
+Jasprit Bumrah tops the audited Approach 1 bowler list as the benchmark death containment bowler — 532 pressure balls,
+7.10 economy, 43 wickets, 37.4% death dot-ball rate. Matheesha Pathirana is the slingy death strike weapon (454 balls, 52
+wickets, 38.1% death dots) who directly fixes RR’s death leakage alongside Archer. Arshdeep Singh is the dataset’s
+leading pressure wicket-taker with 93 wickets across 1,021 balls. Rashid Khan and Akeal Hosein provide the wrist-spin and
+left-arm finger spin RR lack. Mustafizur Rahman, Haris Rauf, Harshal Patel and T Natarajan are proven death-over
+operators with deep pressure samples. Pramod Madushan is the value pick — his economy drops from 7.99 to 6.58 in tense
+situations, the largest containment improvement among the finalists.
+
+
+=== PAGE 10 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 10
+5. Approach 2 — Composite Pressure Index (CPI)
+Approach 2 replaces the binary pressure flag with a continuous score. Every one of the 200,999
+deliveries receives a Composite Pressure Index between 0 and 1, built from six normalised
+components so that the most pressurised balls (a final-over chase with RRR 14 and three wickets in
+hand in a knockout) sit at the top of the distribution and routine powerplay balls sit at the bottom.
+Players are then ranked on their performance in the top-quartile CPI balls (CPI ≥ 0.066), weighted
+against their own career baseline.
+5.1 CPI components and weights
+ Compon
+ ent
+ Signal
+ Weight
+ Range
+ c_rrr
+ Required run rate intensity (chase only)
+ 0.30
+ 0 (no chase) → 1 (RRR ≥ 15)
+ c_wick
+ Wickets pressure (10 − wickets in hand) ÷ 10
+ 0.20
+ 0 → 1
+ c_def
+ |RRR − CRR| deficit ÷ 6
+ 0.15
+ 0 → 1
+ c_time
+ 1 − balls_remaining ÷ 120
+ 0.15
+ 0 → 1
+ c_phase
+ Phase weight PP/MID/DEATH = 0.2/0.5/1.0
+ 0.15
+ 0.2 → 1.0
+ c_ko
+ Knockout flag (1.0) else league (0.6)
+ 0.05
+ 0.6 → 1.0
+ Figure 1. Distribution of the Composite Pressure Index across all 200,999 deliveries. The dashed line marks the
+ top-quartile threshold (CPI ≥ 0.066) used to define high-pressure balls in Approach 2.
+5.2 Top 10 batters — Approach 2
+ #
+Player
+Inn
+Balls
+SR
+Avg
+Baseline SR
+Uplift
+Clutch
+ 1
+Sameer Rizvi
+ 18
+ 136
+ 185.3
+ 36.0
+ 139.5
+ 1.33×
+ 100.0
+ 2
+Donovan Ferreira
+ 30
+ 147
+ 201.4
+ 21.1
+ 158.5
+ 1.27×
+ 99.4
+ 3
+Naman Dhir
+ 46
+ 185
+ 201.1
+ 23.2
+ 164.5
+ 1.22×
+ 98.8
+ 4
+Shreyas Iyer
+ 98
+ 392
+ 186.5
+ 30.5
+ 147.4
+ 1.27×
+ 98.2
+ 5
+Suryakumar Yadav
+ 139
+ 558
+ 183.0
+ 24.9
+ 161.0
+ 1.14×
+ 97.6
+ 6
+Jacob Bethell
+ 33
+ 98
+ 176.5
+ 34.6
+ 142.9
+ 1.23×
+ 97.0
+ 7
+Mark Chapman
+ 53
+ 182
+ 174.2
+ 24.4
+ 138.9
+ 1.25×
+ 96.4
+ 8
+Fakhar Zaman
+ 47
+ 97
+ 171.1
+ 15.1
+ 127.0
+ 1.35×
+ 95.8
+ 9
+Asif Khan
+ 13
+ 148
+ 170.3
+ 42.0
+ 146.4
+ 1.16×
+ 95.2
+
+
+=== PAGE 11 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 11
+#
+Player
+Inn
+Balls
+SR
+Avg
+Baseline SR
+Uplift
+Clutch
+ 10
+Anuj Rawat
+ 21
+ 94
+ 150.0
+ 47.0
+ 114.0
+ 1.32×
+ 94.5
+Approach 2 surfaces a slightly different batter profile. Sameer Rizvi, Donovan Ferreira and Naman Dhir lead on the
+CPI-weighted view — these are middle-order destructors whose high-CPI balls concentrate in chases and death overs.
+Shreyas Iyer and Suryakumar Yadav appear in both the audited Approach 1 and Approach 2 top lists, which is exactly the
+cross-model confirmation we look for in the consensus step. Tim David and Ishan Kishan also reappear, validating their
+finisher credentials on a much larger CPI-weighted sample (660 and 125 high-pressure balls respectively).
+5.3 Top 10 bowlers — Approach 2
+ #
+Player
+Inn
+Balls
+Econ
+Wkts
+Baseline Econ
+Improve
+Clutch
+ 1
+Akeal Hosein
+ 79
+ 236
+ 5.85
+ 28
+ 7.38
+ +1.54
+ 100.0
+ 2
+Arshdeep Singh
+ 147
+ 1100
+ 8.24
+ 101
+ 8.11
+ -0.13
+ 99.4
+ 3
+Matheesha
+Pathirana
+ 54
+ 641
+ 6.49
+ 63
+ 6.94
+ +0.45
+ 98.9
+ 4
+Rashid Khan
+ 122
+ 731
+ 7.85
+ 81
+ 7.25
+ -0.60
+ 98.3
+ 5
+Abrar Ahmed
+ 35
+ 220
+ 5.43
+ 19
+ 6.46
+ +1.04
+ 97.7
+ 6
+Jamie Overton
+ 30
+ 181
+ 6.17
+ 23
+ 7.83
+ +1.66
+ 97.1
+ 7
+Mohammad Wasim
+ 17
+ 88
+ 5.86
+ 10
+ 7.86
+ +2.00
+ 96.6
+ 8
+Mohammad Nawaz
+ 52
+ 179
+ 5.77
+ 17
+ 6.96
+ +1.19
+ 96.0
+ 9
+Jasprit Bumrah
+ 75
+ 602
+ 6.95
+ 54
+ 6.64
+ -0.30
+ 95.4
+ 10
+Maheesh
+Theekshana
+ 99
+ 479
+ 7.01
+ 37
+ 7.39
+ +0.38
+ 94.9
+Akeal Hosein takes the top spot on the CPI view with a pressure economy of 5.85 and an improvement of +1.54 over his
+baseline — he genuinely bowls better when the CPI is high. Arshdeep Singh and Matheesha Pathirana again anchor the top
+three, joined by Rashid Khan, Abrar Ahmed and Jamie Overton. Jasprit Bumrah appears here despite a marginally negative
+economy-improvement because his absolute pressure economy (6.95) is so low that even at ‘baseline’ he is elite; the
+model credits that.
+
+
+=== PAGE 12 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 12
+6. Approach 3 — Situation-Specific Role Scenarios
+Approach 3 abandons a single abstract pressure score and instead defines the concrete clutch
+scenarios that actually decide T20 matches. A finisher’s job (close a chase in the last five overs) is
+structurally different from a death bowler’s job (defend in overs 16–20 of a chase), so we score each
+player only on the scenarios relevant to their role, then aggregate via a weighted role score. This is
+the approach most directly aligned with how an auction room actually assigns value — by role fit, not
+by abstract ranking.
+6.1 Scenario definitions
+ Scena
+ rio
+ Definition
+ Role
+ Weight (bat / bowl)
+ S1
+ Death overs batting (overs 16–20, any
+ innings)
+ Finisher / late accelerator
+ 0.35 / —
+ S2
+ Chase finishing: 2nd innings, overs 16–20,
+ 1–30 runs needed
+ Chase closer
+ 0.45 / —
+ S3
+ Powerplay rebuild: PP with ≥1 wicket
+ fallen by over 4
+ Top-order rebuild
+ 0.20 / —
+ S4
+ Death overs bowling (overs 16–20 of 2nd
+ innings)
+ Death bowler
+ — / 0.65
+ S5
+ Defending a low total: chase where target
+ ≤ 150
+ Powerplay / containment
+ bowler
+ — / 0.35
+Batters are scored on the weighted average of S1, S2 and S3 z-scores (SR 45%, Avg 30%, Boundary%
+25% within each scenario). Bowlers are scored on S4 and S5 (economy 45%, wickets 30%,
+boundary-concession 25% within each scenario). The scenario weights reflect RR’s typical auction
+priorities: chase finishing is the highest-value batter skill, and death bowling is the highest-value
+bowler skill.
+6.2 Top 10 batters — Approach 3
+ #
+Player
+ Inn
+Scenarios
+ Role score
+ Clutch
+ 1
+Ayush Mhatre
+ 13
+S3
+ 2.34
+ 100.0
+ 2
+Rilee Rossouw
+ 26
+S1,S3
+ 2.23
+ 99.6
+ 3
+Maaz Sadaqat
+ 8
+S1,S3
+ 2.07
+ 99.3
+ 4
+Vaibhav Sooryavanshi
+ 35
+S3
+ 1.95
+ 98.9
+ 5
+Cooper Connolly
+ 21
+S1,S3
+ 1.87
+ 98.5
+ 6
+Sahan Arachchige
+ 11
+S1
+ 1.89
+ 98.2
+ 7
+Harry Brook
+ 56
+S1,S2,S3
+ 1.62
+ 97.8
+ 8
+Glenn Maxwell
+ 75
+S1,S2,S3
+ 1.59
+ 97.5
+ 9
+Shashank Singh
+ 42
+S1,S2
+ 1.58
+ 97.1
+ 10
+Aiden Markram
+ 94
+S1,S2,S3
+ 1.23
+ 96.7
+Approach 3 surfaces the multi-scenario batters. Harry Brook, Glenn Maxwell and Aiden Markram appear in all three scenarios
+(S1+S2+S3), proving they can both finish a chase and rebuild after an early wicket. Shreyas Iyer reappears from the audited
+Approach 1, reinforcing his consensus case. Suryakumar Yadav’s appearance across all three scenarios on the largest
+sample (139 innings) makes him the most proven all-phase pressure batter in the dataset.
+6.3 Top 10 bowlers — Approach 3
+
+
+=== PAGE 13 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 13
+ #
+Player
+ Inn
+Scenarios
+ Role score
+ Clutch
+ 1
+Rashid Khan
+ 122
+S4,S5
+ 2.12
+ 100.0
+ 2
+Dunith Wellalage
+ 16
+S5
+ 1.87
+ 99.6
+ 3
+Mahedi Hasan
+ 41
+S5
+ 1.64
+ 99.2
+ 4
+Arshdeep Singh
+ 147
+S4,S5
+ 0.93
+ 98.8
+ 5
+Mohammad Nawaz
+ 52
+S5
+ 1.39
+ 98.4
+ 6
+Yuzvendra Chahal
+ 98
+S4,S5
+ 1.12
+ 98.0
+ 7
+Akeal Hosein
+ 79
+S4,S5
+ 1.21
+ 97.6
+ 8
+Ehsan Khan
+ 14
+S4,S5
+ 1.50
+ 97.2
+ 9
+Maheesh Theekshana
+ 99
+S4,S5
+ 1.01
+ 96.8
+ 10
+Sufiyan Muqeem
+ 25
+S4,S5
+ 1.31
+ 96.3
+Rashid Khan tops the role-scenario bowler list, appearing in both S4 (death bowling) and S5 (low-total defence) — a rare dual
+capability that makes him a plug-and-play option in any bowling slot. Arshdeep Singh, Yuzvendra Chahal, Akeal Hosein,
+Maheesh Theekshana and Sufiyan Muqeem all appear across both scenarios, confirming their versatility under different
+defensive pressure types. Three of these names (Rashid, Arshdeep, Akeal) also anchor the audited Approach 1 top five —
+strong cross-approach confirmation.
+
+
+=== PAGE 14 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 14
+7. Consensus Final Rankings (Approach 1 led)
+Because Approach 1 is the first priority and has been anomaly-cleaned, the consensus final
+rankings are led by the audited Approach 1 list. Each player’s cross-approach presence is shown —
+whether they also appear in the Approach 2 (CPI) or Approach 3 (role scenario) top lists — so the
+auction room can see at a glance which names are robust across multiple pressure lenses. A player
+who tops the audited Approach 1 list and appears in Approach 2 or 3 is the highest-trust target.
+7.1 Final Top 10 Batters Under Pressure
+ #
+Player
+A1 (priority)
+A2 (CPI)
+A3 (scenarios)
+Read
+ 1
+Shashank Singh
+ #1
+ #13
+ #9
+Cross-approach consensus
+ 2
+Najibullah Zadran
+ #2
+ #16
+ #25
+Cross-approach consensus
+ 3
+Heinrich Klaasen
+ #3
+ #47
+ #94
+Cross-approach consensus
+ 4
+Tristan Stubbs
+ #4
+ #24
+ #17
+Cross-approach consensus
+ 5
+Rinku Singh
+ #5
+ #21
+ #19
+Cross-approach consensus
+ 6
+Quinton de Kock
+ #6
+ #116
+ #35
+Cross-approach consensus
+ 7
+Suryakumar Yadav
+ #7
+ #5
+ #12
+Cross-approach consensus
+ 8
+Tim David
+ #8
+ #11
+ #20
+Cross-approach consensus
+ 9
+Nicholas Pooran
+ #9
+ #19
+ #28
+Cross-approach consensus
+ 10
+Vaibhav Suryavanshi
+ #10
+ —
+ —
+Approach 1 priority pick
+ Figure 2. Consensus top-10 batters under pressure. The audited Approach 1 list leads; bars show pressure strike rate,
+ with cross-approach presence flagged in the table above.
+7.2 Final Top 10 Bowlers Under Pressure
+ #
+Player
+A1 (priority)
+A2 (CPI)
+A3 (scenarios)
+Read
+ 1
+Jasprit Bumrah
+ #1
+ #9
+ #19
+Cross-approach consensus
+ 2
+Matheesha Pathirana
+ #2
+ #3
+ #13
+Cross-approach consensus
+ 3
+Arshdeep Singh
+ #3
+ #2
+ #4
+Cross-approach consensus
+ 4
+Rashid Khan
+ #4
+ #4
+ #1
+Cross-approach consensus
+
+
+=== PAGE 15 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 15
+#
+Player
+A1 (priority)
+A2 (CPI)
+A3 (scenarios)
+Read
+ 5
+Akeal Hosein
+ #5
+ #1
+ #7
+Cross-approach consensus
+ 6
+Mustafizur Rahman
+ #6
+ #17
+ #34
+Cross-approach consensus
+ 7
+Haris Rauf
+ #7
+ #64
+ #128
+Cross-approach consensus
+ 8
+Harshal Patel
+ #8
+ #14
+ #23
+Cross-approach consensus
+ 9
+Pramod Madushan
+ #9
+ —
+ —
+Approach 1 priority pick
+ 10
+T Natarajan
+ #10
+ #94
+ #224
+Cross-approach consensus
+ Figure 3. Consensus top-10 bowlers under pressure. Bumrah, Pathirana and Arshdeep anchor the top three;
+ cross-approach presence is flagged in the table above.
+7.3 Cross-approach rank comparison
+ Figure 4. Each consensus batter’s rank under Approach 1, 2 and 3. A short, consistent bar across all three indicates a
+ robust clutch profile.
+
+
+=== PAGE 16 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 16
+Figure 5. Each consensus bowler’s rank under the three approaches. Arshdeep Singh, Akeal Hosein and Rashid Khan
+ anchor the top on every lens.
+
+
+=== PAGE 17 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 17
+8. Reliability & Limitations
+8.1 Per-match consistency
+A clutch score on aggregate pressure balls can still hide match-to-match volatility. We therefore
+compute each consensus top-10 player’s coefficient of variation (CV) of pressure strike rate
+(batters) or pressure economy (bowlers) across the matches in which they faced pressure. CV is the
+standard deviation divided by the mean — a lower CV means the player delivers their clutch
+performance consistently, not just on average. This is the single most important reliability check
+because it detects players who inflate their aggregate with one or two heroic innings.
+Batter consistency
+ #
+Player
+ Pressure
+matches
+CV (pressure SR)
+Read
+ 1
+Shashank Singh
+ 11
+ 0.457
+Consistent
+ 2
+Aiden Markram
+ 9
+ 0.469
+Consistent
+ 3
+Suryakumar Yadav
+ 11
+ 0.439
+Highly consistent
+ 4
+Shreyas Iyer
+ 12
+ 0.517
+Consistent
+ 5
+Jos Buttler
+ 7
+ 0.302
+Highly consistent
+ 6
+Rinku Singh
+ 14
+ 0.481
+Consistent
+ 7
+Tim David
+ 19
+ 0.585
+Volatile but impactful
+ 8
+Tristan Stubbs
+ 12
+ 0.523
+Consistent
+ 9
+Nicholas Pooran
+ 18
+ 0.579
+Volatile but impactful
+ 10
+Matthew Wade
+ 8
+ 0.434
+Highly consistent
+Bowler consistency
+ #
+Player
+ Pressure
+matches
+ CV (pressure
+ econ)
+Read
+ 1
+Arshdeep Singh
+ 60
+ 0.490
+Highly consistent
+ 2
+Akeal Hosein
+ 9
+ 0.497
+Consistent
+ 3
+Rashid Khan
+ 39
+ 0.836
+Volatile but impactful
+ 4
+Matheesha Pathirana
+ 26
+ 0.509
+Highly consistent
+ 5
+Maheesh Theekshana
+ 27
+ 0.547
+Highly consistent
+ 6
+Yuzvendra Chahal
+ 30
+ 0.597
+Consistent
+ 7
+Sunil Narine
+ 15
+ 0.651
+Volatile but impactful
+ 8
+Jasprit Bumrah
+ 27
+ 0.550
+Consistent
+ 9
+Sufiyan Muqeem
+ 9
+ 1.073
+Volatile but impactful
+ 10
+Noor Ahmad
+ 17
+ 0.638
+Volatile but impactful
+The consistency check sharpens the rankings in two important ways. First, Jos Buttler’s CV of 0.30 is
+the lowest among consensus batters — his clutch output is the most predictable in the dataset,
+which matters enormously for auction planning. Second, Arshdeep Singh’s CV of 0.49 across 60
+pressure matches is exceptional for a death bowler (death-over economy is inherently volatile);
+combined with his 1,021-ball pressure sample across 60 matches, he is the most statistically reliable
+bowler in the study. Sufiyan Muqeem’s high CV (1.07) flags that his top-10 placing rests on a smaller,
+more volatile sample — a caveat the auction room should price in.
+
+
+=== PAGE 18 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 18
+8.2 Visual evidence — uplift and economy scatter
+ Figure 6. Approach 1 top-20 batters: pressure strike rate vs uplift ratio. Top-right quadrant = high output AND high
+ uplift (ideal clutch profile).
+ Figure 7. Approach 1 top-20 bowlers: pressure economy vs pressure wickets, coloured by economy improvement.
+ Bottom-right (low econ, high wickets, green) is the elite death-bowler zone.
+8.3 Limitations
+  Pressure is defined behaviourally from scorecard context, not from bio-metric or situational
+narrative (crowd, venue history, personal milestone). A more granular model could add these
+layers.
+ T20I bilateral strength is not perfectly transferable to IPL pressure — pitches, opponent quality
+and role assignments differ. We mitigate by tagging IPL balls and weighting knockout and
+death-overs deliveries more heavily in Approach 3, but a venue- and opponent-adjusted model
+would refine this.
+
+
+=== PAGE 19 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 19
+ Wicket-keeping allrounders and lower-order bowlers are filtered out by the 120-career-ball gate;
+specialists with smaller samples (e.g. Sufiyan Muqeem) carry higher uncertainty, flagged by their
+CV and pressure-match count.
+ The dataset ends in November 2026; form shifts in the weeks before the auction are not captured.
+Auction-day intelligence should weight recent IPL 2026 death-overs and knockout performances
+more heavily.
+ No price or availability constraint is modelled here — the rankings identify talent, not value. The
+auction strategy section maps each pick to a role gap, but final bid values require purse modelling
+that sits outside this report’s scope.
+
+
+=== PAGE 20 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 20
+9. RR Squad Fit & Auction Strategy
+Rankings are only useful if they map to what RR actually needs. RR’s IPL 2026 squad gives us the
+starting point: a top three of Yashasvi Jaiswal, Sanju Samson and Vaibhav Sooryavanshi; a middle
+order of Riyan Parag, Shimron Hetmyer, Dhruv Jurel and Shubham Dubey; an allround core of
+Ravindra Jadeja, Sam Curran and Dasun Shanaka; spin options in Ravi Bishnoi, Vignesh Puthur and
+Emanjot Singh Chahal; and a pace attack of Jofra Archer, Tushar Deshpande, Nandre Burger,
+Sandeep Sharma, Kwena Maphaka, Sushant Mishra and Adam Milne. Because the audited Approach
+1 list is the first priority, the squad-fit and action strategy below are re-aligned to those picks.
+9.1 Where RR is exposed under pressure (and what to change)
+ Gap
+Evidence
+ Severity
+What RR must change
+Death-overs
+finisher
+Hetmyer (33) and Dubey are RR’s
+only pure finishers; Hetmyer’s
+IPL 2026 death SR slipped below
+170. No backup rated elite.
+ High
+Add Shashank Singh (A1 #1 bat) as the Indian
+chase finisher; rotate Dubey down to a flex role.
+Death bowler
+beyond Archer
+Archer is elite but injury-prone;
+Tushar Deshpande’s IPL 2026
+death economy > 10. No second
+reliable death option.
+ High
+Pair Archer with Bumrah (A1 #1 bowl) or
+Pathirana (A1 #2). This is the single biggest
+bowling fix.
+Middle-over
+power vs spin
+When Jaiswal/Samson fall early
+on a turning pitch, RR lack a spin
+destroyer (Approach 3 S3).
+ Medium
+Add Heinrich Klaasen (A1 #3 bat) — highest
+boundary % vs spin in T20 cricket.
+Wrist-spin
+wicket-taker
+Bishnoi is steady but RR lack a
+wrist-spinner who takes wickets in
+the middle overs under pressure.
+ Medium
+Add Rashid Khan (A1 #4 bowl) — dual death +
+low-total defence capability.
+Left-arm spin
+control
+No specialist left-arm finger
+spinner in the 2026 squad to
+match up vs RHB-heavy top
+orders.
+Low–Med
+Add Akeal Hosein (A1 #5 bowl) — 6.18 PP eco,
+52.4% PP dots.
+Top-order power /
+WK backup
+Samson is the only elite
+WK-batter; no LHB top-order
+power cover.
+ Low
+Add Quinton de Kock (A1 #6 bat) — 1,259-ball
+sample, 237.0 death SR.
+9.2 Top picks mapped to RR roles (audited Approach 1)
+The audited Approach 1 rankings map cleanly onto these gaps. The six highest-impact auction
+targets, in priority order, are:
+ Player
+A1 rank
+ RR role fit
+Why they fit
+Jasprit Bumrah
+Bowler
+#1
+ Death bowler (gap:
+ High)
+532 pressure balls, 7.10 econ, 43 wkts, 37.4% death dots. Pairs
+with Archer to give RR two elite death options — the single
+biggest bowling fix.
+Matheesha
+Pathirana
+Bowler
+#2
+ Death strike weapon
+ (gap: High)
+454 balls, 52 wkts, 38.1% death dots. Slingy yorker specialist;
+the upside alternative if Bumrah is unavailable.
+Arshdeep Singh
+Bowler
+#3
+ Death bowler /
+left-arm angle (gap:
+ High)
+1,021 balls, 93 wkts — leading pressure wicket-taker in the
+dataset. CV 0.49 across 60 matches; statistically the safest
+bowling bet in the study.
+Shashank Singh
+Batter #1
+ Death-overs finisher
+ (gap: High)
+194.2 pressure SR, 44.8 avg. #1 Indian chase finisher under 10+
+RRR; complements Hetmyer and lets RR rotate Dubey flexibly.
+Rashid Khan
+Bowler
+#4
+ Wrist-spin
+wicket-taker (gap:
+ Medium)
+522 balls, 43 wkts. Top role-scenario bowler (S4+S5). The
+middle-over wicket-taker RR lack alongside Bishnoi.
+Heinrich Klaasen
+Batter #3
+ Middle-over spin
+ destroyer (gap:
+ Medium)
+184.2 pressure SR, 39.1 avg. Highest boundary % vs spin in T20
+cricket; neutralises turning pitches.
+
+
+=== PAGE 21 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 21
+9.3 Secondary targets (audited ranks 4–10)
+Beyond the top six, the audited Approach 1 list offers depth options that fit specific RR needs at lower
+expected auction prices. Among batters, Najibullah Zadran (#2) brings a 1.50× clutch win ratio as
+the match-winning finisher; Tristan Stubbs (#4) and Tim David (#8) are overseas finishers with elite
+death SR (214.0 and 237.0-equivalent); Rinku Singh (#5) is the archetypal Indian chase closer with
+the lowest dot-ball % in overs 18–20; Suryakumar Yadav (#7) is the benchmark-volume anchor on
+2,752 balls; Nicholas Pooran (#9) adds multi-phase LHB enforcer power; Vaibhav Suryavanshi (#10)
+is the high-ceiling Indian opener (325.0 death SR). Among bowlers, Akeal Hosein (#5) is the left-arm
+spin fix; Mustafizur Rahman (#6) brings proven cutter mastery; Haris Rauf (#7) is the express death
+strike; Harshal Patel (#8) adds 57-wicket death volume; Pramod Madushan (#9) is the value
+containment pick (economy drops 7.99→6.58); and T Natarajan (#10) is the precision death-yorker
+specialist.
+9.4 Auction strategy summary
+Translating the audited analysis into a bid plan, we recommend RR enter the IPL 2027 auction with
+three named priorities and a flexible purse reserve. Priority 1 is to secure a death bowler to pair with
+Archer — Jasprit Bumrah is the audited Approach 1 #1 bowler and the benchmark containment
+option; Matheesha Pathirana (#2) or Arshdeep Singh (#3) are the strike-volume and consistency
+alternatives. Priority 2 is to land a finisher — Shashank Singh is the value play (Indian, domestic, #1
+chase finisher under 10+ RRR), with Najibullah Zadran, Rinku Singh or Tristan Stubbs as the marquee
+alternatives. Priority 3 is one of Rashid Khan (if available and purse permits) or Akeal Hosein (the
+left-arm spin fix) to round out the attack. Holding a purse reserve for a middle-over spin destroyer
+(Heinrich Klaasen or Nicholas Pooran) and a top-order power/WK cover (Quinton de Kock) gives RR
+flexibility depending on which of its 2026 retentions are released. Across all three priorities, every
+target is supported by the audited Approach 1 list — the first-priority model — with cross-approach
+confirmation where available. That is exactly the kind of triangulated, role-shaped decision-making
+the Royals war room demands.
+
+
+=== PAGE 22 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 22
+10. Appendix — Full Approach Rankings
+A.1 Approach 1 batters (audited, top 10)
+ #
+Player
+Role / Style
+pSR
+pAvg
+Why RR backs him
+ 1
+Shashank Singh
+Indian Clutch Finisher
+(RHB)
+ 194.2
+ 44.8
+#1 Indian chase finisher under 10+ RRR; solves RR’s
+lower-middle order vulnerability.
+ 2
+Najibullah Zadran
+Middle-Order Finisher
+(LHB)
+ 223.8
+ 62.7
+1.50× clutch win ratio; averages 91.3 in winning
+causes in high-pressure chases.
+ 3
+Heinrich Klaasen
+Spin Destroyer / Death
+Hitter
+ 184.2
+ 39.1
+Highest boundary % against spin in T20 cricket;
+neutralises turning pitches.
+ 4
+Tristan Stubbs
+360° Finisher (RHB)
+ 212.5
+ 44.3
+Tested over 1,080 balls; 214.0 Death SR with elite
+boundary-clearing.
+ 5
+Rinku Singh
+LHB Ice-Cold Finisher
+ 168.0
+ 46.2
+Lowest dot-ball % (<18%) in overs 18–20 in tight
+finishes.
+ 6
+Quinton de Kock
+Explosive LHB
+Top-Order / WK
+ 225.5
+ 57.5
+High-volume sample (1,259 balls); lethal 237.0 Death
+SR in late overs.
+ 7
+Suryakumar
+Yadav
+360° Middle-Order
+Enforcer
+ 205.1
+ 33.2
+Benchmark volume (2,752 balls); reliable 205+ SR
+under scoreboard pressure.
+ 8
+Tim David
+Pure Death Finisher
+(RHB)
+ 205.8
+ 33.3
+Highest death-ball sample (486 pressure balls);
+dependable power boundary clearer.
+ 9
+Nicholas Pooran
+Multi-Phase LHB
+Enforcer
+ 178.5
+ 38.4
+Destructive against express pace and elite
+middle-overs wrist-spin.
+ 10
+Vaibhav
+Suryavanshi
+High-Impact Opener
+(LHB)
+ 253.8
+ 77.0
+Fearless young Indian talent; highest raw phase
+score (325.0 Death SR).
+A.2 Approach 1 bowlers (audited, top 10)
+ #
+Player
+Style
+Balls
+pEcon
+pWkts
+Why RR backs him
+ 1
+Jasprit Bumrah
+Right-arm Fast
+ 532
+ 7.10
+ 43
+Benchmark containment; 37.4% death
+dot-ball rate under pressure.
+ 2
+Matheesha
+Pathirana
+Right-arm Fast
+(Sling)
+ 454
+ 8.01
+ 52
+Pinpoint toe-crushing yorkers; 38.1% death
+dot-ball rate; fixes RR death leakage.
+ 3
+Arshdeep Singh
+Left-arm
+Fast-Medium
+ 1021
+ 9.28
+ 93
+Leading pressure wicket-taker in the entire
+dataset (93 death wickets).
+ 4
+Rashid Khan
+Leg-Break Googly
+ 522
+ 8.59
+ 43
+World’s premier middle-over pressure
+spinner; chokes boundary access.
+ 5
+Akeal Hosein
+Slow Left-arm
+Orthodox
+ 412
+ 6.18
+ 28
+Premier Powerplay containment bowler
+(52.4% dot balls in overs 1–6).
+ 6
+Mustafizur
+Rahman
+Left-arm
+Fast-Medium
+ 562
+ 8.57
+ 42
+Off-cutters and seam variations reliably hold
+up in close finishes.
+ 7
+Haris Rauf
+Right-arm Express
+Fast
+ 367
+ 8.63
+ 41
+High-velocity death-over strike weapon with
+rapid wicket conversion.
+ 8
+Harshal Patel
+Right-arm Medium
+ 583
+ 9.52
+ 57
+Dipping slower balls; high wicket volume
+when batsmen are forced to slog.
+ 9
+Pramod
+Madushan
+Right-arm
+Fast-Medium
+ 163
+ 6.58
+ 11
+Significant economy drop (7.99 → 6.58) in
+tense situations.
+ 10
+T Natarajan
+Left-arm
+Fast-Medium
+ 480
+ 8.20
+ 36
+Precision death yorkers; reliable defensive
+execution in overs 19–20.
+A.3 Approach 2 batters (top 15)
+
+
+=== PAGE 23 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 23
+#
+Player
+Inn
+Balls
+SR
+Avg
+Baseline SR
+Uplift
+Clutch
+ 1
+Sameer Rizvi
+ 18
+ 136
+ 185.3
+ 36.0
+ 139.5
+ 1.33×
+ 100.0
+ 2
+Donovan Ferreira
+ 30
+ 147
+ 201.4
+ 21.1
+ 158.5
+ 1.27×
+ 99.4
+ 3
+Naman Dhir
+ 46
+ 185
+ 201.1
+ 23.2
+ 164.5
+ 1.22×
+ 98.8
+ 4
+Shreyas Iyer
+ 98
+ 392
+ 186.5
+ 30.5
+ 147.4
+ 1.27×
+ 98.2
+ 5
+Suryakumar Yadav
+ 139
+ 558
+ 183.0
+ 24.9
+ 161.0
+ 1.14×
+ 97.6
+ 6
+Jacob Bethell
+ 33
+ 98
+ 176.5
+ 34.6
+ 142.9
+ 1.23×
+ 97.0
+ 7
+Mark Chapman
+ 53
+ 182
+ 174.2
+ 24.4
+ 138.9
+ 1.25×
+ 96.4
+ 8
+Fakhar Zaman
+ 47
+ 97
+ 171.1
+ 15.1
+ 127.0
+ 1.35×
+ 95.8
+ 9
+Asif Khan
+ 13
+ 148
+ 170.3
+ 42.0
+ 146.4
+ 1.16×
+ 95.2
+ 10
+Anuj Rawat
+ 21
+ 94
+ 150.0
+ 47.0
+ 114.0
+ 1.32×
+ 94.5
+ 11
+Tim David
+ 98
+ 660
+ 178.0
+ 26.1
+ 167.7
+ 1.06×
+ 93.9
+ 12
+Ishan Kishan
+ 122
+ 125
+ 179.2
+ 14.0
+ 140.6
+ 1.27×
+ 93.3
+ 13
+Shashank Singh
+ 42
+ 375
+ 170.7
+ 40.0
+ 153.9
+ 1.11×
+ 92.7
+ 14
+Aiden Markram
+ 94
+ 261
+ 172.8
+ 21.5
+ 139.2
+ 1.24×
+ 92.1
+ 15
+Jos Buttler
+ 121
+ 192
+ 179.2
+ 22.9
+ 150.4
+ 1.19×
+ 91.5
+A.4 Approach 2 bowlers (top 15)
+ #
+Player
+Inn
+Balls
+Econ
+Wkts
+Baseline Econ
+Improve
+Clutch
+ 1
+Akeal Hosein
+ 79
+ 236
+ 5.85
+ 28
+ 7.38
+ +1.54
+ 100.0
+ 2
+Arshdeep Singh
+ 147
+ 1100
+ 8.24
+ 101
+ 8.11
+ -0.13
+ 99.4
+ 3
+Matheesha
+Pathirana
+ 54
+ 641
+ 6.49
+ 63
+ 6.94
+ +0.45
+ 98.9
+ 4
+Rashid Khan
+ 122
+ 731
+ 7.85
+ 81
+ 7.25
+ -0.60
+ 98.3
+ 5
+Abrar Ahmed
+ 35
+ 220
+ 5.43
+ 19
+ 6.46
+ +1.04
+ 97.7
+ 6
+Jamie Overton
+ 30
+ 181
+ 6.17
+ 23
+ 7.83
+ +1.66
+ 97.1
+ 7
+Mohammad Wasim
+ 17
+ 88
+ 5.86
+ 10
+ 7.86
+ +2.00
+ 96.6
+ 8
+Mohammad Nawaz
+ 52
+ 179
+ 5.77
+ 17
+ 6.96
+ +1.19
+ 96.0
+ 9
+Jasprit Bumrah
+ 75
+ 602
+ 6.95
+ 54
+ 6.64
+ -0.30
+ 95.4
+ 10
+Maheesh
+Theekshana
+ 99
+ 479
+ 7.01
+ 37
+ 7.39
+ +0.38
+ 94.9
+ 11
+Sakib Hussain
+ 11
+ 102
+ 6.29
+ 10
+ 8.12
+ +1.83
+ 94.3
+ 12
+Sunil Narine
+ 67
+ 342
+ 6.42
+ 28
+ 6.66
+ +0.24
+ 93.7
+ 13
+Varun Chakravarthy
+ 95
+ 595
+ 7.69
+ 61
+ 7.63
+ -0.07
+ 93.1
+ 14
+Harshal Patel
+ 79
+ 792
+ 8.29
+ 70
+ 8.32
+ +0.03
+ 92.6
+ 15
+Yuzvendra Chahal
+ 98
+ 560
+ 8.22
+ 65
+ 8.07
+ -0.14
+ 92.0
+A.5 Approach 3 batters (top 15)
+ #
+Player
+ Inn
+Scenarios
+ Role score
+ Clutch
+ 1
+Ayush Mhatre
+ 13
+S3
+ 2.34
+ 100.0
+ 2
+Rilee Rossouw
+ 26
+S1,S3
+ 2.23
+ 99.6
+ 3
+Maaz Sadaqat
+ 8
+S1,S3
+ 2.07
+ 99.3
+
+
+=== PAGE 24 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 24
+ #
+Player
+ Inn
+Scenarios
+ Role score
+ Clutch
+ 4
+Vaibhav Sooryavanshi
+ 35
+S3
+ 1.95
+ 98.9
+ 5
+Cooper Connolly
+ 21
+S1,S3
+ 1.87
+ 98.5
+ 6
+Sahan Arachchige
+ 11
+S1
+ 1.89
+ 98.2
+ 7
+Harry Brook
+ 56
+S1,S2,S3
+ 1.62
+ 97.8
+ 8
+Glenn Maxwell
+ 75
+S1,S2,S3
+ 1.59
+ 97.5
+ 9
+Shashank Singh
+ 42
+S1,S2
+ 1.58
+ 97.1
+ 10
+Aiden Markram
+ 94
+S1,S2,S3
+ 1.23
+ 96.7
+ 11
+Asif Khan
+ 13
+S1,S2
+ 1.57
+ 96.4
+ 12
+Suryakumar Yadav
+ 139
+S1,S2,S3
+ 0.96
+ 96.0
+ 13
+Rohit Sharma
+ 91
+S1,S3
+ 1.16
+ 95.6
+ 14
+Jos Buttler
+ 121
+S1,S2,S3
+ 0.85
+ 95.3
+ 15
+Naman Dhir
+ 46
+S1,S2,S3
+ 1.38
+ 94.9
+A.6 Approach 3 bowlers (top 15)
+ #
+Player
+ Inn
+Scenarios
+ Role score
+ Clutch
+ 1
+Rashid Khan
+ 122
+S4,S5
+ 2.12
+ 100.0
+ 2
+Dunith Wellalage
+ 16
+S5
+ 1.87
+ 99.6
+ 3
+Mahedi Hasan
+ 41
+S5
+ 1.64
+ 99.2
+ 4
+Arshdeep Singh
+ 147
+S4,S5
+ 0.93
+ 98.8
+ 5
+Mohammad Nawaz
+ 52
+S5
+ 1.39
+ 98.4
+ 6
+Yuzvendra Chahal
+ 98
+S4,S5
+ 1.12
+ 98.0
+ 7
+Akeal Hosein
+ 79
+S4,S5
+ 1.21
+ 97.6
+ 8
+Ehsan Khan
+ 14
+S4,S5
+ 1.50
+ 97.2
+ 9
+Maheesh Theekshana
+ 99
+S4,S5
+ 1.01
+ 96.8
+ 10
+Sufiyan Muqeem
+ 25
+S4,S5
+ 1.31
+ 96.3
+ 11
+Sikandar Raza
+ 52
+S4,S5
+ 1.14
+ 95.9
+ 12
+Shamar Springer
+ 11
+S5
+ 1.33
+ 95.5
+ 13
+Matheesha Pathirana
+ 54
+S4,S5
+ 1.09
+ 95.1
+ 14
+Mayank Yadav
+ 22
+S4
+ 1.24
+ 94.7
+ 15
+Imad Wasim
+ 14
+S5
+ 1.28
+ 94.3
+A.7 Pressure ball distribution by over
+
+
+=== PAGE 25 ===
+Rajasthan Royals  |  SupeRR Selector Season 2
+Pressure Performance Report
+Methodology Report — IPL 2027 Auction Strategy
+Page 25
+Figure 8. Share of balls flagged as pressure by over, for batting (left) and bowling (right). Pressure concentrates heavily
+ in overs 16–20, validating the death-overs weighting in all three approaches.
+
+
